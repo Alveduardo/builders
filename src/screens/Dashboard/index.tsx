@@ -5,7 +5,11 @@ import api from '../../services/api';
 import LinearGradient from 'react-native-linear-gradient';
 import Animated, { FadeOut, FadeIn } from "react-native-reanimated";
 
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import Fontisto from 'react-native-vector-icons/Fontisto';
 
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 interface Location {
     latitude: number,
@@ -20,24 +24,27 @@ import Cloudy from '../../../assets/cloudy.jpeg'
 import Rainy from '../../../assets/rainy.jpg'
 
 import { styles } from './styles';
-import { COLORS } from '../../utils/colors/colorsUtils';
-import { getFormatedDate } from '../../utils/date/dateUtils';
+import { COLORS } from '../../utils/colors/colors-consts';
+import { getFormatedDate } from '../../utils/date/date-utils';
 import { kelvinToCelsius } from '../../utils/temp/tempUtils';
+import IconButton from '../../components/IconButton';
 
 const AnimatedLG = Animated.createAnimatedComponent(LinearGradient);
 const AnimatedIB = Animated.createAnimatedComponent(ImageBackground);
 
 export default () => {
+    const { top } = useSafeAreaInsets();
 
+    const [isLoading, setLoading] = useState<boolean>(true)
     const [data, setData] = useState<Weather>()
 
     const Img = Rainy
 
     useEffect(() => {
-        requestLocationPermission()
+        requestLocation()
     }, [])
 
-    const requestLocationPermission = async () => {
+    const requestLocation = async () => {
         const granted = await PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION);
 
         if (granted === PermissionsAndroid.RESULTS.GRANTED)
@@ -51,12 +58,20 @@ export default () => {
     };
 
     const requestWeather = ({ latitude, longitude }: Location) => {
-        api.get(`?lat=${latitude}&lon=${longitude}`).then(({ data: res }) => {
-            setData(res);
+        api.get(`/weather?lat=${latitude}&lon=${longitude}`).then(({ data: res }) => {
+            setData(res)
+            setLoading(false)
         }).catch(err => {
             requestWeather({ latitude, longitude })
             console.warn(err)
         })
+    }
+
+    const updateWeather = (): void => {
+        setLoading(true)
+
+        // only for visual effects
+        setTimeout(requestLocation, 800);
     }
 
     if (!data) return (
@@ -66,8 +81,6 @@ export default () => {
             style={styles.container}
         />
     )
-    console.log(data);
-
 
     return (
         <AnimatedIB
@@ -81,6 +94,23 @@ export default () => {
                     backgroundColor: 'rgba(0,0,0,0.3)',
                     padding: 20,
                 }}>
+                <IconButton
+                    loading={isLoading}
+                    type={MaterialCommunityIcons}
+                    name={'cloud-sync'}
+                    color={'#FFF'}
+                    disabled={isLoading}
+                    size={'small'}
+                    underlayColor={'rgba(0,0,0,0.4)'}
+                    style={{
+                        top: top + 16,
+                        right: 16,
+                        position: 'absolute',
+                        backgroundColor: 'rgba(0,0,0,0.2)',
+                        borderRadius: 999,
+                    }}
+                    onPress={updateWeather}
+                />
                 <View style={styles.topInfoWrapper}>
                     <View>
                         <Text style={styles.city}>{data.name}</Text>
@@ -108,50 +138,23 @@ export default () => {
                     <View style={{ alignItems: 'center' }}>
                         <Text style={styles.infoText}>Vento</Text>
                         <Text style={[styles.infoText, { fontSize: 24 }]}>
-                            {data.wind.speed}
+                            {data.wind.speed.toFixed(0)} km/h
                         </Text>
-                        <Text style={styles.infoText}>km/h</Text>
-                        <View style={styles.infoBar}>
-                            <View
-                                style={{
-                                    width: data.wind.speed / 2,
-                                    height: 5,
-                                    backgroundColor: '#69F0AE',
-                                }}
-                            />
-                        </View>
+
                     </View>
                     <View style={{ alignItems: 'center' }}>
-                        <Text style={styles.infoText}>Chuva</Text>
+                        <Text style={styles.infoText}>Pressão</Text>
                         <Text style={[styles.infoText, { fontSize: 24 }]}>
-                            {data.main.pressure}
+                            {data.main.pressure} hpa
                         </Text>
-                        <Text style={styles.infoText}>%</Text>
-                        <View style={styles.infoBar}>
-                            <View
-                                style={{
-                                    width: 20 / 2,
-                                    height: 5,
-                                    backgroundColor: '#F44336',
-                                }}
-                            />
-                        </View>
+
                     </View>
                     <View style={{ alignItems: 'center' }}>
                         <Text style={styles.infoText}>Umidade</Text>
                         <Text style={[styles.infoText, { fontSize: 24 }]}>
-                            {data.main.humidity}
+                            {data.main.humidity}%
                         </Text>
-                        <Text style={styles.infoText}>%</Text>
-                        <View style={styles.infoBar}>
-                            <View
-                                style={{
-                                    width: data.main.humidity / 2,
-                                    height: 5,
-                                    backgroundColor: '#F44336',
-                                }}
-                            />
-                        </View>
+
                     </View>
                 </View>
             </View>

@@ -48,6 +48,7 @@ export const styles = StyleSheet.create({
         width: 45,
         height: 5,
         backgroundColor: 'rgba(255, 255, 255, 0.5)',
+        overflow: 'hidden'
     },
     indicatorWrapper: {
         position: 'absolute',

@@ -13,7 +13,7 @@ export const getFormatedDate = (): string => {
 
     const newDate = new Date()
 
-    const hour = `${newDate.getHours().toString().padStart(2, '0')}:${newDate.getMinutes()}`
+    const hour = `${newDate.getHours().toString().padStart(2, '0')}:${newDate.getMinutes().toString().padStart(2, '0')}`
     const date = `${newDate.getDate()} ${months[newDate.getMonth()]} ${newDate.getFullYear()}`
 
     return `${hour} - ${date}`
