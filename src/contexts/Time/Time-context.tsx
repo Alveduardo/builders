@@ -71,7 +71,7 @@ export const TimeProvider = ({ children }: TimeContextPropsTypes): JSX.Element =
 
         if (oldTime?.hourType !== hourType || oldTime?.isRain !== isRain) {
           img = getImage(hourType, isRain);
-          iconName = getIconWeather(hourType, isRain);
+          iconName = getIconWeather(hourType, isRain, isIncludedWord(data.weather[0].description, 'clear'));
         } else {
           img = oldImg;
           iconName = oldIconName;

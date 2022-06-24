@@ -23,7 +23,6 @@ export default ({ navigation }: DashboardPropsType) => {
   const {
     state: { data, img, iconName },
   } = useTime();
-  console.log(data);
 
   const {
     state: { isLoading },
