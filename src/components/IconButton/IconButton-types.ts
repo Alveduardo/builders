@@ -1,38 +1,37 @@
-import { ActivityIndicatorProps, TouchableHighlightProps, ViewStyle } from "react-native";
-import { Icon, IconProps } from "react-native-vector-icons/Icon";
+import { ActivityIndicatorProps, TouchableHighlightProps, ViewStyle } from 'react-native';
+import { Icon, IconProps } from 'react-native-vector-icons/Icon';
 
-export type Size = 'small' | 'regular' | 'large'
+export type Size = 'xSmall' | 'small' | 'regular' | 'large';
 
 export type SizeStyles = {
-    [key in Size]: {
-        containerStyle: ViewStyle
-        sizeIcon: number
-    }
-}
+  [key in Size]: {
+    sizeIcon: number;
+  };
+};
 
 interface DefaultStyles {
-    containerStyle: ViewStyle
+  containerStyle: ViewStyle;
 }
 
 export interface IconButtonStylesType {
-    defaultStyles: DefaultStyles,
-    sizeStyles: SizeStyles
+  defaultStyles: DefaultStyles;
+  sizeStyles: SizeStyles;
 }
 
 interface StateConfig {
-    iconProps: IconProps
-    sizeIndicator: ActivityIndicatorProps['size']
+  iconProps: IconProps;
+  sizeIndicator: ActivityIndicatorProps['size'];
 }
 
-type StylesConfig = DefaultStyles
+type StylesConfig = DefaultStyles;
 
 export interface IconButtonConfig {
-    state: StateConfig
-    styles: StylesConfig
+  state: StateConfig;
+  styles: StylesConfig;
 }
 
 export interface IconButtonPropsType extends Omit<IconProps, 'size' | 'style'>, TouchableHighlightProps {
-    type: typeof Icon,
-    size: Size
-    loading?: boolean
+  type: typeof Icon;
+  size?: Size;
+  loading?: boolean;
 }

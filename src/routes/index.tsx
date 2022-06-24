@@ -4,13 +4,15 @@ import { AppRootStackParamList } from '../utils/navigation/navigator-types';
 import { stackOptions } from '../utils/navigation/navigator-options';
 
 import Dashboard from '../screens/Dashboard';
+import WeatherForecast from '../screens/WeatherForecast';
 
-const Stack = createNativeStackNavigator<AppRootStackParamList>()
+const Stack = createNativeStackNavigator<AppRootStackParamList>();
 
 export default () => {
-    return (
-        <Stack.Navigator screenOptions={stackOptions}>
-            <Stack.Screen name="Dashboard" component={Dashboard} />
-        </Stack.Navigator>
-    )
-}
+  return (
+    <Stack.Navigator screenOptions={stackOptions}>
+      <Stack.Screen name='Dashboard' component={Dashboard} />
+      <Stack.Screen name='WeatherForecast' component={WeatherForecast} />
+    </Stack.Navigator>
+  );
+};

@@ -1,3 +1,4 @@
 export type AppRootStackParamList = {
-    Dashboard: undefined;
+  Dashboard: undefined;
+  WeatherForecast: undefined;
 };
