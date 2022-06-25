@@ -2,7 +2,7 @@ import React, { createContext, useEffect, useState } from 'react';
 import { PermissionsAndroid } from 'react-native';
 import Geolocation from 'react-native-geolocation-service';
 
-import { TimeContextPropsTypes, TimeContextDataType, TimeContextState } from './Time-types';
+import { TimeContextPropsTypes, TimeContextData, TimeContextState } from './Time-types';
 
 import { getHourType } from './Time-utils';
 import { GLOBAL, isIncludedWord } from '../../utils';
@@ -16,7 +16,7 @@ export interface Location {
   longitude?: number;
 }
 
-export const TimeContext = createContext({} as TimeContextDataType);
+export const TimeContext = createContext({} as TimeContextData);
 
 export const TimeProvider = ({ children }: TimeContextPropsTypes): JSX.Element => {
   const [state, setState] = useState<TimeContextState>({
@@ -62,16 +62,16 @@ export const TimeProvider = ({ children }: TimeContextPropsTypes): JSX.Element =
       setState((oldState) => {
         const { time: oldTime, img: oldImg, iconName: oldIconName } = oldState;
 
-        const hourType = getHourType();
+        const period = getHourType();
         const isRain = isIncludedWord(data.weather[0].description, 'rain');
 
-        const time = { hourType, isRain };
+        const time = { period, isRain };
 
         let img, iconName;
 
-        if (oldTime?.hourType !== hourType || oldTime?.isRain !== isRain) {
-          img = getImage(hourType, isRain);
-          iconName = getIconWeather(hourType, isRain, isIncludedWord(data.weather[0].description, 'clear'));
+        if (oldTime?.period !== period || oldTime?.isRain !== isRain) {
+          img = getImage(period, isRain);
+          iconName = getIconWeather(period, isRain, isIncludedWord(data.weather[0].description, 'clear'));
         } else {
           img = oldImg;
           iconName = oldIconName;

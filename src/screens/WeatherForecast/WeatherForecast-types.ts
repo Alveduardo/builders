@@ -1,7 +1,7 @@
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { TextStyle, ViewStyle } from 'react-native';
 import { AppRootStackParamList } from '../../utils/navigation/navigator-types';
-import { WeatherType } from '../../utils/weather/weather-types';
+import { Weather } from '../../utils/weather/weather-types';
 
 interface StateConfig {
 
@@ -11,10 +11,10 @@ interface MethodsConfig {
 
 }
 
-type StylesConfig = WeatherForecastStylesType;
+type StylesConfig = WeatherForecastStyles;
 
-export interface UseWeatherForecastParams extends WeatherForecastPropsType {
-    data: WeatherType | null;
+export interface UseWeatherForecastProps extends WeatherForecastProps {
+    data: Weather | null;
 }
 
 export interface WeatherForecastConfig {
@@ -23,12 +23,12 @@ export interface WeatherForecastConfig {
     styles: StylesConfig;
 }
 
-export interface WeatherForecastStylesType {
+export interface WeatherForecastStyles {
     containerStyle: ViewStyle;
     contentStyle: ViewStyle;
 
 }
 
-export interface WeatherForecastPropsType {
+export interface WeatherForecastProps {
     navigation: NativeStackNavigationProp<AppRootStackParamList>;
 }

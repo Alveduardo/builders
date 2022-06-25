@@ -1,6 +1,6 @@
-import { IconButtonStylesType } from './IconButton-types';
+import { IconButtonStyles } from './IconButton-types';
 
-export const IconButtonStyles: IconButtonStylesType = {
+export const iconButtonStyles: IconButtonStyles = {
   defaultStyles: {
     containerStyle: {
       alignItems: 'center',
@@ -9,16 +9,16 @@ export const IconButtonStyles: IconButtonStylesType = {
   },
   sizeStyles: {
     xSmall: {
-      sizeIcon: 28,
+      iconSize: 28,
     },
     small: {
-      sizeIcon: 32,
+      iconSize: 32,
     },
     regular: {
-      sizeIcon: 48,
+      iconSize: 48,
     },
     large: {
-      sizeIcon: 64,
+      iconSize: 64,
     },
   },
 };

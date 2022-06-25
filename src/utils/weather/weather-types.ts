@@ -1,4 +1,4 @@
-export interface WeatherType {
+export interface Weather {
   main: {
     pressure: number;
     humidity: number;

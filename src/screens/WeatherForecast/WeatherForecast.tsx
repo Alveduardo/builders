@@ -5,10 +5,10 @@ import { ImageBackground, View, } from 'react-native';
 
 import { useTime } from '../../contexts/Time';
 
-import { WeatherForecastPropsType } from './WeatherForecast-types';
+import { WeatherForecastProps } from './WeatherForecast-types';
 import { useWeatherForecastConfig } from './WeatherForecast-controllers';
 
-export default ({ navigation }: WeatherForecastPropsType) => {
+export default ({ navigation }: WeatherForecastProps) => {
     const {
         state: { data, img, iconName },
     } = useTime();

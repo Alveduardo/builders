@@ -1,26 +1,26 @@
 import { ImageSourcePropType } from 'react-native';
 import { IconProps } from 'react-native-vector-icons/Icon';
-import { WeatherType } from '../../utils/weather/weather-types';
+import { Weather } from '../../utils/weather/weather-types';
 
 export interface TimeContextPropsTypes {
   children: JSX.Element;
 }
 
-export interface TimeType {
+export interface Time {
   isRain: boolean;
-  hourType: HourType;
+  period: Period;
 }
 
-export type HourType = 'day' | 'night';
+export type Period = 'day' | 'night';
 
 export interface TimeContextState {
-  data: WeatherType | null;
-  time: TimeType | null;
+  data: Weather | null;
+  time: Time | null;
   img: ImageSourcePropType | null;
   iconName: IconProps['name'] | null;
 }
 
-export interface TimeContextDataType {
+export interface TimeContextData {
   state: TimeContextState;
   requestLocation: any;
 }

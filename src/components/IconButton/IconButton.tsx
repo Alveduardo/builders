@@ -3,7 +3,7 @@ import { ActivityIndicator, ColorValue, TouchableHighlight } from 'react-native'
 import { areEqualComponentProps } from '../../utils';
 import { ICON_BUTTON } from './IconButton-consts';
 import { useIconButtonConfig } from './IconButton-controllers';
-import { IconButtonPropsType } from './IconButton-types';
+import { IconButtonProps } from './IconButton-types';
 
 const IconButton = memo(
   ({
@@ -14,7 +14,7 @@ const IconButton = memo(
     loading = false,
     style = undefined,
     ...rest
-  }: IconButtonPropsType): JSX.Element => {
+  }: IconButtonProps): JSX.Element => {
     const {
       state: { iconProps, sizeIndicator },
       styles: { containerStyle },
@@ -27,7 +27,7 @@ const IconButton = memo(
     const Icon = type;
 
     return (
-      <TouchableHighlight {...rest} testID={ICON_BUTTON.TEST_ID.ICON} style={[containerStyle, style]}>
+      <TouchableHighlight testID={ICON_BUTTON.TEST_ID.ICON} {...rest} style={[containerStyle, style]}>
         {loading ? (
           <ActivityIndicator
             testID={ICON_BUTTON.TEST_ID.ACTIVITY_INDICATOR}

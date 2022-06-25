@@ -1,6 +1,6 @@
-import { DashboardStylesType } from './Dashboard-types';
+import { DashboardStyles } from './Dashboard-types';
 
-export const DashboardStyles: DashboardStylesType = {
+export const dashboardStyles: DashboardStyles = {
   containerStyle: {
     flex: 1,
   },
@@ -22,46 +22,26 @@ export const DashboardStyles: DashboardStylesType = {
     marginTop: 160,
     justifyContent: 'space-between',
   },
-  cityStyle: {
-    color: '#fff',
-    fontSize: 30,
-    fontWeight: 'bold',
-  },
-  timeStyle: {
-    color: '#fff',
+  fontBoldStyle: {
     fontWeight: 'bold',
   },
   flexDirectionRowStyle: {
     flexDirection: 'row',
   },
-  temparatureStyle: {
-    color: '#fff',
-    fontSize: 84,
-  },
   weatherTypeStyle: {
-    color: '#fff',
     fontWeight: 'bold',
     textTransform: 'capitalize',
-    fontSize: 24,
     marginLeft: 8,
   },
   separatorStyle: {
-    borderBottomColor: 'rgba(255,255,255,0.7)',
     marginTop: 20,
     borderBottomWidth: 1,
+    borderBottomColor: 'rgba(255,255,255,0.7)',
   },
   bottomInfoWrapperStyle: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginVertical: 20,
-  },
-  infoTitleStyle: {
-    color: 'white',
-    fontSize: 14,
-    fontWeight: 'bold',
-  },
-  infoParagraphStyle: {
-    fontSize: 24,
   },
   alignItemsCenterStyle: {
     alignItems: 'center',

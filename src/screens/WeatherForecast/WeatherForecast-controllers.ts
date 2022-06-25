@@ -1,10 +1,10 @@
 import { useCallback, useState } from 'react';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { WeatherForecastStyles } from './WeatherForecast-styles';
-import { WeatherForecastConfig, UseWeatherForecastParams } from './WeatherForecast-types';
+import { WeatherForecastConfig, UseWeatherForecastProps } from './WeatherForecast-types';
 import { useTime } from '../../contexts/Time';
 
-export const useWeatherForecastConfig = ({ navigation, data }: UseWeatherForecastParams): WeatherForecastConfig => {
+export const useWeatherForecastConfig = ({ navigation }: UseWeatherForecastProps): WeatherForecastConfig => {
     const { } = useTime();
     const { top, bottom } = useSafeAreaInsets();
 

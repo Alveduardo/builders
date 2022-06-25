@@ -1,16 +1,16 @@
-import { TimeType } from '../../contexts/Time/Time-types';
+import { Time } from '../../contexts/Time/Time-types';
 
 export const getIconWeather = (
-  time: TimeType['hourType'] = 'day',
+  period: Time['period'] = 'day',
   isRain: boolean = false,
-  isClear: boolean = false
+  isClearSky: boolean = false
 ) => {
   let iconName: string = '';
 
-  if (!isClear)
+  if (!isClearSky)
     iconName += 'cloud-'
 
-  if (time === 'day') iconName += 'sun';
+  if (period === 'day') iconName += 'sun';
   else iconName += 'moon';
 
   if (isRain) iconName += '-rain';

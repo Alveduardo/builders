@@ -1,13 +1,13 @@
-import { IconButtonStyles } from './IconButton-styles';
-import { IconButtonConfig, IconButtonPropsType } from './IconButton-types';
+import { iconButtonStyles } from './IconButton-styles';
+import { IconButtonConfig, IconButtonProps } from './IconButton-types';
 
-export const useIconButtonConfig = ({ name, size, color }: Partial<IconButtonPropsType>): IconButtonConfig => {
+export const useIconButtonConfig = ({ name, size, color }: Partial<IconButtonProps>): IconButtonConfig => {
   const {
     defaultStyles: { containerStyle },
     sizeStyles: {
-      [size!]: { sizeIcon },
+      [size!]: { iconSize },
     },
-  } = IconButtonStyles;
+  } = iconButtonStyles;
 
   const sizeIndicator = size === 'large' ? 'large' : 'small';
 
@@ -15,7 +15,7 @@ export const useIconButtonConfig = ({ name, size, color }: Partial<IconButtonPro
     state: {
       iconProps: {
         name: name!,
-        size: sizeIcon,
+        size: iconSize,
         color,
       },
       sizeIndicator,

@@ -1,6 +1,6 @@
-import { WeatherForecastStylesType } from './WeatherForecast-types';
+import { WeatherForecastStyles } from './WeatherForecast-types';
 
-export const WeatherForecastStyles: WeatherForecastStylesType = {
+export const weatherForecastStyles: WeatherForecastStyles = {
   containerStyle: {
     flex: 1,
   },

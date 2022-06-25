@@ -1,5 +1,5 @@
 import { ImageSourcePropType } from 'react-native';
 
-export interface ImagesListType {
+export interface ImagesList {
   [index: string]: ImageSourcePropType;
 }

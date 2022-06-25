@@ -1,15 +1,16 @@
 import React from 'react';
-import { ImageBackground, Text, View } from 'react-native';
+import { ImageBackground, View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import Animated, { FadeOut, FadeIn } from 'react-native-reanimated';
 import { Icon } from 'react-native-vector-icons/Icon';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
-import { DashboardPropsType } from './Dashboard-types';
+import { DashboardProps } from './Dashboard-types';
 import { useDashboardConfig } from './Dashboard-controllers';
 
 import IconButton from '../../components/IconButton';
+import Label from '../../components/Label';
 
 import { COLORS } from '../../utils/colors/colors-consts';
 import { getFormatedDate } from '../../utils/date/date-utils';
@@ -19,7 +20,7 @@ import { useTime } from '../../contexts/Time';
 const AnimatedLG = Animated.createAnimatedComponent(LinearGradient);
 const AnimatedIB = Animated.createAnimatedComponent(ImageBackground);
 
-export default ({ navigation }: DashboardPropsType) => {
+export default ({ navigation }: DashboardProps) => {
   const {
     state: { data, img, iconName },
   } = useTime();
@@ -32,16 +33,12 @@ export default ({ navigation }: DashboardPropsType) => {
       contentStyle,
       updateIconStyle,
       topInfoWrapperStyle,
-      cityStyle,
-      timeStyle,
-      flexDirectionRowStyle,
-      temparatureStyle,
       weatherTypeStyle,
       separatorStyle,
       bottomInfoWrapperStyle,
-      infoTitleStyle,
-      infoParagraphStyle,
+      flexDirectionRowStyle,
       alignItemsCenterStyle,
+      fontBoldStyle,
     },
   } = useDashboardConfig({
     navigation,
@@ -65,13 +62,15 @@ export default ({ navigation }: DashboardPropsType) => {
         />
         <View style={topInfoWrapperStyle}>
           <View>
-            <Text style={cityStyle}>{data.name}</Text>
-            <Text style={timeStyle}>{getFormatedDate()}</Text>
+            <Label size='xLarge' style={fontBoldStyle}>{data.name}</Label>
+            <Label size='small' style={fontBoldStyle}>{getFormatedDate()}</Label>
           </View>
 
           <View style={flexDirectionRowStyle}>
             <View>
-              <Text style={temparatureStyle}>{`${kelvinToCelsius(data.main.temp)} \u2103`}</Text>
+              <Label size='display'>
+                {`${kelvinToCelsius(data.main.temp)} \u2103`}
+              </Label>
               <View style={flexDirectionRowStyle}>
                 <IconButton
                   type={FontAwesome5 as typeof Icon}
@@ -81,7 +80,7 @@ export default ({ navigation }: DashboardPropsType) => {
                   onPress={updateWeather}
                   disabled
                 />
-                <Text style={weatherTypeStyle}>{data.weather[0].description}</Text>
+                <Label size={'large'} style={weatherTypeStyle}>{data.weather[0].description}</Label>
               </View>
             </View>
 
@@ -99,16 +98,16 @@ export default ({ navigation }: DashboardPropsType) => {
         <View style={separatorStyle} />
         <View style={bottomInfoWrapperStyle}>
           <View style={alignItemsCenterStyle}>
-            <Text style={infoTitleStyle}>Vento</Text>
-            <Text style={infoParagraphStyle}>{data.wind.speed.toFixed(0)} km/h</Text>
+            <Label size={'small'} style={fontBoldStyle}>Vento</Label>
+            <Label size='large' style={fontBoldStyle}>{data.wind.speed.toFixed(0)} km/h</Label>
           </View>
           <View style={alignItemsCenterStyle}>
-            <Text style={infoTitleStyle}>Pressão</Text>
-            <Text style={infoParagraphStyle}>{data.main.pressure} hpa</Text>
+            <Label size={'small'} style={fontBoldStyle}>Pressão</Label>
+            <Label size='large' style={fontBoldStyle}>{data.main.pressure} hpa</Label>
           </View>
           <View style={alignItemsCenterStyle}>
-            <Text style={infoTitleStyle}>Umidade</Text>
-            <Text style={infoParagraphStyle}>{data.main.humidity}%</Text>
+            <Label size={'small'} style={fontBoldStyle}>Umidade</Label>
+            <Label size='large' style={fontBoldStyle}>{data.main.humidity}%</Label>
           </View>
         </View>
       </View>

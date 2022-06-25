@@ -31,9 +31,10 @@ import NR1 from '../../../assets/nRain1.jpg';
 import NR2 from '../../../assets/nRain2.jpg';
 import NR3 from '../../../assets/nRain3.jpg';
 import NR4 from '../../../assets/nRain4.jpg';
-import { ImagesListType } from './images-types';
 
-export const imagesList: ImagesListType = {
+import { ImagesList } from './images-types';
+
+export const imagesList: ImagesList = {
   d1: D1,
   d2: D2,
   d3: D3,

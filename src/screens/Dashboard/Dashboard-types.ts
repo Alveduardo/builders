@@ -1,7 +1,7 @@
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { TextStyle, ViewStyle } from 'react-native';
 import { AppRootStackParamList } from '../../utils/navigation/navigator-types';
-import { WeatherType } from '../../utils/weather/weather-types';
+import { Weather } from '../../utils/weather/weather-types';
 
 interface StateConfig {
   isLoading: boolean;
@@ -12,10 +12,10 @@ interface MethodsConfig {
   handlePress: () => void;
 }
 
-type StylesConfig = DashboardStylesType;
+type StylesConfig = DashboardStyles;
 
-export interface UseDashboardParams extends DashboardPropsType {
-  data: WeatherType | null;
+export interface UseDashboardProps extends DashboardProps {
+  data: Weather | null;
 }
 
 export interface DashboardConfig {
@@ -24,23 +24,19 @@ export interface DashboardConfig {
   styles: StylesConfig;
 }
 
-export interface DashboardStylesType {
+export interface DashboardStyles {
   containerStyle: ViewStyle;
   contentStyle: ViewStyle;
   updateIconStyle: ViewStyle;
   topInfoWrapperStyle: ViewStyle;
-  cityStyle: TextStyle;
-  timeStyle: TextStyle;
-  flexDirectionRowStyle: ViewStyle;
-  temparatureStyle: TextStyle;
   weatherTypeStyle: TextStyle;
   separatorStyle: ViewStyle;
   bottomInfoWrapperStyle: ViewStyle;
-  infoTitleStyle: TextStyle;
-  infoParagraphStyle: TextStyle;
+  flexDirectionRowStyle: ViewStyle;
   alignItemsCenterStyle: ViewStyle;
+  fontBoldStyle: TextStyle;
 }
 
-export interface DashboardPropsType {
+export interface DashboardProps {
   navigation: NativeStackNavigationProp<AppRootStackParamList, 'WeatherForecast'>;
 }

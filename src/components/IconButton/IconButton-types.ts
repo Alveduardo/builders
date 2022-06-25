@@ -5,7 +5,7 @@ export type Size = 'xSmall' | 'small' | 'regular' | 'large';
 
 export type SizeStyles = {
   [key in Size]: {
-    sizeIcon: number;
+    iconSize: number;
   };
 };
 
@@ -13,7 +13,7 @@ interface DefaultStyles {
   containerStyle: ViewStyle;
 }
 
-export interface IconButtonStylesType {
+export interface IconButtonStyles {
   defaultStyles: DefaultStyles;
   sizeStyles: SizeStyles;
 }
@@ -30,7 +30,7 @@ export interface IconButtonConfig {
   styles: StylesConfig;
 }
 
-export interface IconButtonPropsType extends Omit<IconProps, 'size' | 'style'>, TouchableHighlightProps {
+export interface IconButtonProps extends Omit<IconProps, 'size' | 'style'>, TouchableHighlightProps {
   type: typeof Icon;
   size?: Size;
   loading?: boolean;

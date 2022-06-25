@@ -1,4 +1,6 @@
-export const colorBrightness = (hex: string, percent: any) => {
+import { HEX } from "./colors-types";
+
+export const colorBrightness = (hex: string, percent: any): HEX => {
 
     let newHex = hex.replace(/^\s*#|\s*$/g, '')
 
@@ -12,10 +14,10 @@ export const colorBrightness = (hex: string, percent: any) => {
     return '#' +
         ((0 | (1 << 8) + r + (256 - r) * percent / 100).toString(16)).substring(1) +
         ((0 | (1 << 8) + g + (256 - g) * percent / 100).toString(16)).substring(1) +
-        ((0 | (1 << 8) + b + (256 - b) * percent / 100).toString(16)).substring(1)
+        ((0 | (1 << 8) + b + (256 - b) * percent / 100).toString(16)).substring(1) as HEX
 };
 
-export const rgbaToHex = (r: number, g: number, b: number, a: number) => {
+export const rgbaToHex = (r: number, g: number, b: number, a: number): HEX => {
 
     const outParts = [
         r.toString(16),
@@ -29,6 +31,6 @@ export const rgbaToHex = (r: number, g: number, b: number, a: number) => {
             outParts[i] = '0' + v
     })
 
-    return ('#' + outParts.join(''));
+    return ('#' + outParts.join('')) as HEX
 }
 
