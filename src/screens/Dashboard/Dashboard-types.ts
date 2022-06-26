@@ -1,10 +1,12 @@
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { TextStyle, ViewStyle } from 'react-native';
+import { TimeContextState } from '../../contexts/Time/Time-types';
 import { AppRootStackParamList } from '../../utils/navigation/navigator-types';
 import { Weather } from '../../utils/weather/weather-types';
 
-interface StateConfig {
+interface StateConfig extends Pick<TimeContextState, 'img' | 'iconName'> {
   isLoading: boolean;
+  weather?: Weather['weather'];
 }
 
 interface MethodsConfig {
@@ -13,10 +15,6 @@ interface MethodsConfig {
 }
 
 type StylesConfig = DashboardStyles;
-
-export interface UseDashboardProps extends DashboardProps {
-  data: Weather | null;
-}
 
 export interface DashboardConfig {
   state: StateConfig;

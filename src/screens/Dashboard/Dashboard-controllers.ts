@@ -1,12 +1,15 @@
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { dashboardStyles } from './Dashboard-styles';
-import { DashboardConfig, UseDashboardProps } from './Dashboard-types';
+import { DashboardConfig, DashboardProps } from './Dashboard-types';
 import { useCallback, useState } from 'react';
 import { useTime } from '../../contexts/Time';
 import useDidUpdate from '../../hooks/useDidUpdate';
 
-export const useDashboardConfig = ({ navigation, data }: UseDashboardProps): DashboardConfig => {
-  const { requestLocation } = useTime();
+export const useDashboardConfig = ({ navigation }: DashboardProps): DashboardConfig => {
+  const {
+    state: { data, img, iconName },
+    requestLocation,
+  } = useTime();
   const { top, bottom } = useSafeAreaInsets();
 
   const {
@@ -32,7 +35,7 @@ export const useDashboardConfig = ({ navigation, data }: UseDashboardProps): Das
     setLoading(true);
 
     //only for visual effects in development.
-    setTimeout(requestLocation, 800);
+    setTimeout(requestLocation, 400);
   }, []);
 
   const handlePress = useCallback((): void => {
@@ -42,6 +45,9 @@ export const useDashboardConfig = ({ navigation, data }: UseDashboardProps): Das
   return {
     state: {
       isLoading,
+      weather: data?.weather,
+      img,
+      iconName,
     },
     methods: {
       updateWeather,

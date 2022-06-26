@@ -10,7 +10,7 @@ const Stack = createNativeStackNavigator<AppRootStackParamList>();
 
 export default () => {
   return (
-    <Stack.Navigator screenOptions={stackOptions}>
+    <Stack.Navigator screenOptions={stackOptions} initialRouteName={'Dashboard'}>
       <Stack.Screen name='Dashboard' component={Dashboard} />
       <Stack.Screen name='WeatherForecast' component={WeatherForecast} />
     </Stack.Navigator>

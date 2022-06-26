@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { ActivityIndicator, ColorValue, TouchableHighlight } from 'react-native';
+import { ActivityIndicator, ColorValue, TouchableOpacity } from 'react-native';
 import { areEqualComponentProps } from '../../utils';
 import { ICON_BUTTON } from './IconButton-consts';
 import { useIconButtonConfig } from './IconButton-controllers';
@@ -27,7 +27,7 @@ const IconButton = memo(
     const Icon = type;
 
     return (
-      <TouchableHighlight testID={ICON_BUTTON.TEST_ID.ICON} {...rest} style={[containerStyle, style]}>
+      <TouchableOpacity testID={ICON_BUTTON.TEST_ID.ICON} {...rest} style={[containerStyle, style]}>
         {loading ? (
           <ActivityIndicator
             testID={ICON_BUTTON.TEST_ID.ACTIVITY_INDICATOR}
@@ -37,7 +37,7 @@ const IconButton = memo(
         ) : (
           <Icon testID={ICON_BUTTON.TEST_ID.ICON} {...iconProps} />
         )}
-      </TouchableHighlight>
+      </TouchableOpacity>
     );
   },
   areEqualComponentProps,

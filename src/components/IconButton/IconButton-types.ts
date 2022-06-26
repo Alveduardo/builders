@@ -1,7 +1,7 @@
-import { ActivityIndicatorProps, TouchableHighlightProps, ViewStyle } from 'react-native';
+import { ActivityIndicatorProps, TouchableOpacityProps, ViewStyle } from 'react-native';
 import { Icon, IconProps } from 'react-native-vector-icons/Icon';
 
-export type Size = 'xSmall' | 'small' | 'regular' | 'large';
+export type Size = 'xxxSmall' | 'xxSmall' | 'xSmall' | 'small' | 'regular' | 'large';
 
 export type SizeStyles = {
   [key in Size]: {
@@ -30,7 +30,7 @@ export interface IconButtonConfig {
   styles: StylesConfig;
 }
 
-export interface IconButtonProps extends Omit<IconProps, 'size' | 'style'>, TouchableHighlightProps {
+export interface IconButtonProps extends Omit<IconProps, 'size' | 'style'>, TouchableOpacityProps {
   type: typeof Icon;
   size?: Size;
   loading?: boolean;

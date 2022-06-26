@@ -14,8 +14,8 @@ export const dashboardStyles: DashboardStyles = {
     position: 'absolute',
     backgroundColor: 'rgba(0,0,0,0.2)',
     borderRadius: 999,
-    width: 56,
-    height: 56,
+    width: 60,
+    height: 60,
   },
   topInfoWrapperStyle: {
     flex: 1,

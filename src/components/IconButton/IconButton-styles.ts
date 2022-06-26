@@ -8,6 +8,12 @@ export const iconButtonStyles: IconButtonStyles = {
     },
   },
   sizeStyles: {
+    xxxSmall: {
+      iconSize: 16,
+    },
+    xxSmall: {
+      iconSize: 20,
+    },
     xSmall: {
       iconSize: 28,
     },

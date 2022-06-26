@@ -7,10 +7,9 @@ import Routes from './routes';
 import { TimeProvider } from './contexts/Time';
 
 export default () => {
-  const statusBarProps: Pick<StatusBarProps, 'translucent' | 'backgroundColor' | 'barStyle'> = {
+  const statusBarProps: Pick<StatusBarProps, 'translucent' | 'backgroundColor'> = {
     translucent: true,
     backgroundColor: 'transparent',
-    barStyle: 'light-content',
   };
 
   return (

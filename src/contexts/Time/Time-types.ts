@@ -6,12 +6,12 @@ export interface TimeContextPropsTypes {
   children: JSX.Element;
 }
 
-export interface Time {
-  isRain: boolean;
-  period: Period;
-}
-
 export type Period = 'day' | 'night';
+
+export interface Time {
+  period: Period;
+  isRain: boolean;
+}
 
 export interface TimeContextState {
   data: Weather | null;
@@ -22,5 +22,5 @@ export interface TimeContextState {
 
 export interface TimeContextData {
   state: TimeContextState;
-  requestLocation: any;
+  requestLocation: () => void;
 }

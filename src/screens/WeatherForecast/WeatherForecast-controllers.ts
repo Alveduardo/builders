@@ -1,28 +1,56 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { WeatherForecastStyles } from './WeatherForecast-styles';
-import { WeatherForecastConfig, UseWeatherForecastProps } from './WeatherForecast-types';
+import { weatherForecastStyles } from './WeatherForecast-styles';
+import { WeatherForecastConfig, WeatherForecastProps } from './WeatherForecast-types';
 import { useTime } from '../../contexts/Time';
 
-export const useWeatherForecastConfig = ({ navigation }: UseWeatherForecastProps): WeatherForecastConfig => {
-    const { } = useTime();
-    const { top, bottom } = useSafeAreaInsets();
+export const useWeatherForecastConfig = ({ navigation }: WeatherForecastProps): WeatherForecastConfig => {
+  const { top, bottom } = useSafeAreaInsets();
 
-    const {
-        containerStyle,
-        contentStyle,
+  const {
+    containerStyle,
+    contentStyle,
+    goBackIconStyle,
+    tempMaxMinStyle,
+    forecastLabelStyle,
+    containerListStyle,
+    containerBottomStyle,
+    containerCardStyle,
+    containerTitleCardStyle,
+    textAlignCenter,
+    borderRounded,
+  } = weatherForecastStyles;
 
-    } = WeatherForecastStyles;
+  const {
+    state: { data, img },
+  } = useTime();
 
-    return {
-        state: {
-        },
-        methods: {
+  const goBack = () => {
+    navigation.goBack();
+  };
 
-        },
-        styles: {
-            containerStyle,
-            contentStyle: { ...contentStyle, paddingTop: top, paddingBottom: bottom },
-        },
-    };
+  return {
+    state: {
+      weather: data?.weather!,
+      forecast: data?.forecast,
+      img,
+    },
+    methods: {
+      goBack,
+    },
+    styles: {
+      containerStyle,
+      contentStyle: { ...contentStyle, marginBottom: bottom },
+      goBackIconStyle: { ...goBackIconStyle, top: top + 16 },
+      feelsLikeTitleStyle: { marginTop: top, ...textAlignCenter },
+      tempMaxMinStyle: { ...tempMaxMinStyle, ...textAlignCenter },
+      forecastLabelStyle,
+      containerListStyle,
+      containerBottomStyle,
+      containerCardStyle,
+      containerTitleCardStyle,
+      textAlignCenter,
+      borderRounded,
+    },
+  };
 };

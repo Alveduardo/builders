@@ -4,11 +4,13 @@ import { imagesList } from './images-list';
 
 export const getImage = (time: Time['period'] = 'day', isRain: boolean = false) => {
   const min: number = 1;
-  const max: number = isRain ? 4 : 11;
+  const max: number = isRain ? 5 : 12;
 
-  const hourType: string = time === 'day' ? 'd' : 'n';
+  let period: string = time === 'day' ? 'd' : 'n';
 
-  const path: string = hourType + getRandomInt(min, max);
+  if (isRain) period += 'r';
+
+  const path: string = period + getRandomInt(min, max);
 
   return imagesList[path];
 };

@@ -10,10 +10,10 @@ import D9 from '../../../assets/day9.jpg';
 import D10 from '../../../assets/day10.jpg';
 import D11 from '../../../assets/day11.jpg';
 
-import DR1 from '../../../assets/day1.jpg';
-import DR2 from '../../../assets/day2.jpg';
-import DR3 from '../../../assets/day3.jpg';
-import DR4 from '../../../assets/day4.jpg';
+import DR1 from '../../../assets/dRain1.jpg';
+import DR2 from '../../../assets/dRain2.jpg';
+import DR3 from '../../../assets/dRain3.jpg';
+import DR4 from '../../../assets/dRain4.jpg';
 
 import N1 from '../../../assets/night1.jpg';
 import N2 from '../../../assets/night2.jpg';

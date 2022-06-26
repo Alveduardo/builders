@@ -9,24 +9,19 @@ import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import { DashboardProps } from './Dashboard-types';
 import { useDashboardConfig } from './Dashboard-controllers';
 
-import IconButton from '../../components/IconButton';
 import Label from '../../components/Label';
+import IconButton from '../../components/IconButton';
 
 import { COLORS } from '../../utils/colors/colors-consts';
 import { getFormatedDate } from '../../utils/date/date-utils';
 import { kelvinToCelsius } from '../../utils/temp/temp-utils';
-import { useTime } from '../../contexts/Time';
 
 const AnimatedLG = Animated.createAnimatedComponent(LinearGradient);
 const AnimatedIB = Animated.createAnimatedComponent(ImageBackground);
 
 export default ({ navigation }: DashboardProps) => {
   const {
-    state: { data, img, iconName },
-  } = useTime();
-
-  const {
-    state: { isLoading },
+    state: { isLoading, weather, img, iconName },
     methods: { updateWeather, handlePress },
     styles: {
       containerStyle,
@@ -40,12 +35,9 @@ export default ({ navigation }: DashboardProps) => {
       alignItemsCenterStyle,
       fontBoldStyle,
     },
-  } = useDashboardConfig({
-    navigation,
-    data,
-  });
+  } = useDashboardConfig({ navigation });
 
-  if (!data) return <AnimatedLG exiting={FadeOut} colors={COLORS.GRADIENTS} style={containerStyle} />;
+  if (!weather) return <AnimatedLG exiting={FadeOut} colors={COLORS.SPLASH_GRADIENTS} style={containerStyle} />;
 
   return (
     <AnimatedIB source={img!} fadeDuration={0} entering={FadeIn} style={containerStyle}>
@@ -53,34 +45,30 @@ export default ({ navigation }: DashboardProps) => {
         <IconButton
           type={MaterialCommunityIcons}
           name={'cloud-sync'}
-          color={'#FFF'}
           loading={isLoading}
+          activeOpacity={1}
           disabled={isLoading}
-          underlayColor={'rgba(0,0,0,0.4)'}
           style={updateIconStyle}
           onPress={updateWeather}
         />
         <View style={topInfoWrapperStyle}>
           <View>
-            <Label size='xLarge' style={fontBoldStyle}>{data.name}</Label>
-            <Label size='small' style={fontBoldStyle}>{getFormatedDate()}</Label>
+            <Label size='xLarge' style={fontBoldStyle}>
+              {weather?.name}
+            </Label>
+            <Label size='xSmall' style={fontBoldStyle}>
+              {getFormatedDate()}
+            </Label>
           </View>
 
           <View style={flexDirectionRowStyle}>
             <View>
-              <Label size='display'>
-                {`${kelvinToCelsius(data.main.temp)} \u2103`}
-              </Label>
+              <Label size='display'>{`${kelvinToCelsius(weather?.main.temp)} \u2103`}</Label>
               <View style={flexDirectionRowStyle}>
-                <IconButton
-                  type={FontAwesome5 as typeof Icon}
-                  name={iconName!}
-                  size={'xSmall'}
-                  color={'#FFF'}
-                  onPress={updateWeather}
-                  disabled
-                />
-                <Label size={'large'} style={weatherTypeStyle}>{data.weather[0].description}</Label>
+                <IconButton type={FontAwesome5 as typeof Icon} name={iconName!} size={'xSmall'} disabled />
+                <Label size={'large'} style={weatherTypeStyle}>
+                  {weather?.weather[0].description}
+                </Label>
               </View>
             </View>
 
@@ -90,7 +78,6 @@ export default ({ navigation }: DashboardProps) => {
               color={'#FFF'}
               size={'regular'}
               onPress={handlePress}
-              underlayColor={'transparent'}
               style={containerStyle}
             />
           </View>
@@ -98,16 +85,28 @@ export default ({ navigation }: DashboardProps) => {
         <View style={separatorStyle} />
         <View style={bottomInfoWrapperStyle}>
           <View style={alignItemsCenterStyle}>
-            <Label size={'small'} style={fontBoldStyle}>Vento</Label>
-            <Label size='large' style={fontBoldStyle}>{data.wind.speed.toFixed(0)} km/h</Label>
+            <Label size={'xSmall'} style={fontBoldStyle}>
+              Vento
+            </Label>
+            <Label size='large' style={fontBoldStyle}>
+              {weather?.wind.speed.toFixed(0)} km/h
+            </Label>
           </View>
           <View style={alignItemsCenterStyle}>
-            <Label size={'small'} style={fontBoldStyle}>Pressão</Label>
-            <Label size='large' style={fontBoldStyle}>{data.main.pressure} hpa</Label>
+            <Label size={'xSmall'} style={fontBoldStyle}>
+              Pressão
+            </Label>
+            <Label size='large' style={fontBoldStyle}>
+              {weather?.main.pressure} hpa
+            </Label>
           </View>
           <View style={alignItemsCenterStyle}>
-            <Label size={'small'} style={fontBoldStyle}>Umidade</Label>
-            <Label size='large' style={fontBoldStyle}>{data.main.humidity}%</Label>
+            <Label size={'xSmall'} style={fontBoldStyle}>
+              Umidade
+            </Label>
+            <Label size='large' style={fontBoldStyle}>
+              {weather?.main.humidity}%
+            </Label>
           </View>
         </View>
       </View>

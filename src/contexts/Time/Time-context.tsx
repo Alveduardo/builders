@@ -1,10 +1,11 @@
 import React, { createContext, useEffect, useState } from 'react';
-import { PermissionsAndroid } from 'react-native';
+import { PermissionsAndroid, StatusBar } from 'react-native';
 import Geolocation from 'react-native-geolocation-service';
+import SplashScreen from 'react-native-splash-screen';
 
 import { TimeContextPropsTypes, TimeContextData, TimeContextState } from './Time-types';
 
-import { getHourType } from './Time-utils';
+import { getPeriod } from './Time-utils';
 import { GLOBAL, isIncludedWord } from '../../utils';
 import { getImage } from '../../utils/images/images-utils';
 
@@ -27,6 +28,8 @@ export const TimeProvider = ({ children }: TimeContextPropsTypes): JSX.Element =
   });
 
   useEffect(() => {
+    SplashScreen.hide();
+
     (async () => {
       try {
         if (GLOBAL.IS_IOS) {
@@ -56,14 +59,17 @@ export const TimeProvider = ({ children }: TimeContextPropsTypes): JSX.Element =
   };
 
   const requestWeather = async ({ latitude, longitude }: Location) => {
-    const { data } = await api.get(`/weather?lat=${latitude}&lon=${longitude}`);
+    const [{ data: weather }, { data: forecast }] = await Promise.all([
+      api.get(`/weather?lat=${latitude}&lon=${longitude}&lang=pt_br`),
+      api.get(`/forecast?lat=${latitude}&lon=${latitude}&lang=pt_br&units=metric&cnt=11`),
+    ]);
 
-    if (data)
+    if (weather)
       setState((oldState) => {
         const { time: oldTime, img: oldImg, iconName: oldIconName } = oldState;
 
-        const period = getHourType();
-        const isRain = isIncludedWord(data.weather[0].description, 'rain');
+        const period = getPeriod();
+        const isRain = weather?.rain ? true : false;
 
         const time = { period, isRain };
 
@@ -71,16 +77,21 @@ export const TimeProvider = ({ children }: TimeContextPropsTypes): JSX.Element =
 
         if (oldTime?.period !== period || oldTime?.isRain !== isRain) {
           img = getImage(period, isRain);
-          iconName = getIconWeather(period, isRain, isIncludedWord(data.weather[0].description, 'clear'));
+          iconName = getIconWeather(period, isRain, isIncludedWord(weather.weather[0].description, 'limpo'));
         } else {
           img = oldImg;
           iconName = oldIconName;
         }
 
+        period === 'day' ? StatusBar.setBarStyle('dark-content') : StatusBar.setBarStyle('light-content');
+
         return {
           img,
           time,
-          data,
+          data: {
+            weather,
+            forecast,
+          },
           iconName,
         };
       });
