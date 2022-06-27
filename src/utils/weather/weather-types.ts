@@ -18,6 +18,10 @@ export interface Weather {
       speed: number;
     };
     visibility: number;
+    sys: {
+      sunrise: number;
+      sunset: number;
+    };
   };
   forecast: any;
 }

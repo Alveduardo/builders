@@ -7,11 +7,14 @@ import Fontisto from 'react-native-vector-icons/Fontisto';
 
 import { WeatherForecastProps } from './WeatherForecast-types';
 import { useWeatherForecastConfig } from './WeatherForecast-controllers';
-import IconButton from '../../components/IconButton';
+
 import Label from '../../components/Label';
-import { Item } from '../../components/List';
+import IconButton from '../../components/IconButton';
+import { ItemT } from '../../components/List/Item/Item-types';
+import { Header as ListHeaderComponent, Item } from '../../components/List';
+
 import { kelvinToCelsius } from '../../utils/temp/temp-utils';
-import { ItemT } from '../../components/List/Item/Item';
+import { getDateFromUnix } from '../../utils/date/date-utils';
 
 export default ({ navigation }: WeatherForecastProps) => {
   const {
@@ -19,23 +22,25 @@ export default ({ navigation }: WeatherForecastProps) => {
     methods: { goBack },
     styles: {
       containerStyle,
-      contentStyle,
+      containerContentStyle,
       goBackIconStyle,
       feelsLikeTitleStyle,
       tempMaxMinStyle,
-      forecastLabelStyle,
       containerListStyle,
       containerBottomStyle,
       containerCardStyle,
       containerTitleCardStyle,
+      sunriseContentStyle,
+      marginRightSmall,
+      marginRightRegular,
+      marginBottomDisplay,
       textAlignCenter,
-      borderRounded,
     },
   } = useWeatherForecastConfig({ navigation });
 
   return (
     <ImageBackground source={img!} defaultSource={img as ImageURISource} fadeDuration={0} style={containerStyle}>
-      <IconButton type={Ionicons} name={'arrow-back'} style={goBackIconStyle} onPress={goBack} />
+      <IconButton type={Ionicons} name={'arrow-back'} activeOpacity={0.6} style={goBackIconStyle} onPress={goBack} />
       <Label size='large' style={feelsLikeTitleStyle}>
         Sensação
       </Label>
@@ -49,15 +54,14 @@ export default ({ navigation }: WeatherForecastProps) => {
       </Label>
 
       <ScrollView
-        style={borderRounded}
         bounces={false}
+        style={containerContentStyle}
+        contentContainerStyle={containerContentStyle}
+        fadingEdgeLength={16}
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={contentStyle}
       >
         <View style={containerListStyle}>
-          <Label size='regular' style={forecastLabelStyle}>
-            Previsão horária
-          </Label>
+          <ListHeaderComponent title={'Previsão horária'} />
 
           {forecast?.list.map((item: ItemT, index: number) => {
             return <Item {...{ key: index, item, index }} />;
@@ -67,11 +71,11 @@ export default ({ navigation }: WeatherForecastProps) => {
         <View style={containerBottomStyle}>
           <View style={containerCardStyle}>
             <View style={containerTitleCardStyle}>
-              <IconButton size={'xxxSmall'} style={{ marginRight: 4 }} type={AntDesign} name={'eye'} disabled />
+              <IconButton size={'xxxSmall'} style={marginRightSmall} type={AntDesign} name={'eye'} disabled />
               <Label size={'small'}>Visibilidade</Label>
             </View>
 
-            <Label style={{ marginBottom: 'auto' }} size='xLarge'>
+            <Label style={marginBottomDisplay} size='xLarge'>
               {weather?.visibility / 1000} km
             </Label>
 
@@ -79,17 +83,17 @@ export default ({ navigation }: WeatherForecastProps) => {
           </View>
           <View style={containerCardStyle}>
             <View style={containerTitleCardStyle}>
-              <IconButton size={'xxxSmall'} style={{ marginRight: 6 }} type={Fontisto} name={'day-sunny'} disabled />
+              <IconButton size={'xxxSmall'} style={marginRightSmall} type={Fontisto} name={'day-sunny'} disabled />
               <Label size={'small'}>Nascer do sol</Label>
             </View>
 
-            <View style={{ flexDirection: 'row', flex: 1, alignItems: 'center' }}>
-              <IconButton size={'xSmall'} style={{ marginRight: 6 }} type={Feather} name={'sunrise'} disabled />
-              <Label size={'large'}>{weather?.visibility / 1000}</Label>
+            <View style={sunriseContentStyle}>
+              <IconButton size={'xSmall'} style={marginRightRegular} type={Feather} name={'sunrise'} disabled />
+              <Label size={'large'}>{getDateFromUnix(weather?.sys.sunrise)}</Label>
             </View>
-            <View style={{ flexDirection: 'row', flex: 1, alignItems: 'center' }}>
-              <IconButton size={'xSmall'} style={{ marginRight: 6 }} type={Feather} name={'sunset'} disabled />
-              <Label size={'large'}>{weather?.visibility / 1000}</Label>
+            <View style={sunriseContentStyle}>
+              <IconButton size={'xSmall'} style={marginRightRegular} type={Feather} name={'sunset'} disabled />
+              <Label size={'large'}>{getDateFromUnix(weather?.sys.sunset)}</Label>
             </View>
           </View>
         </View>

@@ -2,7 +2,7 @@ import { ImageSourcePropType } from 'react-native';
 import { IconProps } from 'react-native-vector-icons/Icon';
 import { Weather } from '../../utils/weather/weather-types';
 
-export interface TimeContextPropsTypes {
+export interface TimeContextProps {
   children: JSX.Element;
 }
 

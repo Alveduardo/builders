@@ -27,7 +27,7 @@ const IconButton = memo(
     const Icon = type;
 
     return (
-      <TouchableOpacity testID={ICON_BUTTON.TEST_ID.ICON} {...rest} style={[containerStyle, style]}>
+      <TouchableOpacity testID={ICON_BUTTON.TEST_ID.CONTAINER} {...rest} style={[containerStyle, style]}>
         {loading ? (
           <ActivityIndicator
             testID={ICON_BUTTON.TEST_ID.ACTIVITY_INDICATOR}

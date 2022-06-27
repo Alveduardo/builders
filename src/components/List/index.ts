@@ -1,2 +1,2 @@
-export { Separator } from './Separator';
+export { Header } from './Header';
 export { Item } from './Item';

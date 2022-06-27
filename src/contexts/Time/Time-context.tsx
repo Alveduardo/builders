@@ -3,7 +3,7 @@ import { PermissionsAndroid, StatusBar } from 'react-native';
 import Geolocation from 'react-native-geolocation-service';
 import SplashScreen from 'react-native-splash-screen';
 
-import { TimeContextPropsTypes, TimeContextData, TimeContextState } from './Time-types';
+import { TimeContextProps, TimeContextData, TimeContextState } from './Time-types';
 
 import { getPeriod } from './Time-utils';
 import { GLOBAL, isIncludedWord } from '../../utils';
@@ -19,7 +19,7 @@ export interface Location {
 
 export const TimeContext = createContext({} as TimeContextData);
 
-export const TimeProvider = ({ children }: TimeContextPropsTypes): JSX.Element => {
+export const TimeProvider = ({ children }: TimeContextProps): JSX.Element => {
   const [state, setState] = useState<TimeContextState>({
     img: null,
     time: null,
@@ -39,7 +39,9 @@ export const TimeProvider = ({ children }: TimeContextPropsTypes): JSX.Element =
           const granted = await PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION);
 
           if (granted === PermissionsAndroid.RESULTS.GRANTED) requestLocation();
-        } else console.log('Permission denied');
+        } else {
+          console.log('Permission denied');
+        }
       } catch (error) {
         console.log(error);
       }

@@ -35,23 +35,21 @@ export const useDashboardConfig = ({ navigation }: DashboardProps): DashboardCon
     setLoading(true);
 
     //only for visual effects in development.
-    setTimeout(requestLocation, 400);
+    setTimeout(requestLocation, 800);
   }, []);
 
-  const handlePress = useCallback((): void => {
-    navigation.navigate('WeatherForecast');
-  }, []);
+  const handlePress = useCallback((): void => navigation.navigate('WeatherForecast'), []);
 
   return {
     state: {
-      isLoading,
-      weather: data?.weather,
       img,
       iconName,
+      isLoading,
+      weather: data?.weather,
     },
     methods: {
-      updateWeather,
       handlePress,
+      updateWeather,
     },
     styles: {
       containerStyle,

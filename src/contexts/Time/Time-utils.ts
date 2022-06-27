@@ -7,7 +7,9 @@ export const getPeriod = (date?: Date): Period => {
   return isDay ? 'day' : 'night';
 };
 
-export const getDateFromString = (txt: string) => {
+export const getDateFromString = (txt: string): Date | undefined => {
+  if (!txt) return;
+
   const split = txt.split(' ');
 
   const date = split[0].substring(0, 10).split('-');

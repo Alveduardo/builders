@@ -5,7 +5,7 @@ export const weatherForecastStyles: WeatherForecastStyles = {
     flex: 1,
     padding: 20,
   },
-  contentStyle: {
+  containerContentStyle: {
     flexGrow: 1,
     borderRadius: 20,
   },
@@ -17,23 +17,11 @@ export const weatherForecastStyles: WeatherForecastStyles = {
   tempMaxMinStyle: {
     marginBottom: 16,
   },
-  textAlignCenter: {
-    textAlign: 'center',
-  },
-  borderRounded: {
-    borderRadius: 20,
-  },
-  forecastLabelStyle: {
-    opacity: 0.8,
-    marginBottom: 16,
-    textAlign: 'center',
-  },
   containerListStyle: {
-    flexGrow: 1,
     borderRadius: 20,
     marginBottom: 12,
     backgroundColor: 'rgba(0,0,0,0.4)',
-    paddingVertical: 16,
+    paddingTop: 16,
   },
   containerBottomStyle: {
     flexDirection: 'row',
@@ -53,5 +41,22 @@ export const weatherForecastStyles: WeatherForecastStyles = {
     alignItems: 'center',
     marginBottom: 4,
     opacity: 0.8,
+  },
+  sunriseContentStyle: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  marginRightSmall: {
+    marginRight: 6,
+  },
+  marginRightRegular: {
+    marginRight: 8,
+  },
+  marginBottomDisplay: {
+    marginBottom: 'auto',
+  },
+  textAlignCenter: {
+    textAlign: 'center',
   },
 };

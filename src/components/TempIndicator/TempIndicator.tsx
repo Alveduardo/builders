@@ -1,21 +1,30 @@
 import React from 'react';
 import { View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+
+import { TEMP_INDICATOR } from './TempIndicator-consts';
+import { TempIndicatorProps } from './TempIndicator-types';
+import { useTempIndicatorConfig } from './TempIndicator-controllers';
+
 import { COLORS } from '../../utils/colors/colors-consts';
 import Label from '../Label';
-import { TempIndicatorProps } from './TempIndicator-types';
 
-const TempIndicator = ({ min, max }: TempIndicatorProps): JSX.Element => {
+const TempIndicator = ({ min, max, ...rest }: TempIndicatorProps): JSX.Element => {
+  const {
+    styles: { containerStyle, gradientStyle },
+  } = useTempIndicatorConfig();
+
   return (
-    <View style={{ alignItems: 'center', flexDirection: 'row' }}>
-      <Label>{min}°</Label>
+    <View testID={TEMP_INDICATOR.TEST_ID.CONTAINER} {...rest} style={containerStyle}>
+      <Label testID={TEMP_INDICATOR.TEST_ID.MIN}>{min}°</Label>
       <LinearGradient
+        testID={TEMP_INDICATOR.TEST_ID.GRADIENT}
         colors={COLORS.TEMP_GRADIENTS}
-        start={{ x: 0, y: 0 }}
-        end={{ x: 1, y: 0 }}
-        style={{ width: 80, height: 6, borderRadius: 999, marginHorizontal: 8 }}
+        start={TEMP_INDICATOR.GRADIENT.START}
+        end={TEMP_INDICATOR.GRADIENT.END}
+        style={gradientStyle}
       />
-      <Label>{max}°</Label>
+      <Label testID={TEMP_INDICATOR.TEST_ID.MAX}>{max}°</Label>
     </View>
   );
 };

@@ -7,13 +7,16 @@ import { useRef } from 'react';
  * @returns {ReturnType} Generic hook return
  */
 
-const useConstructor = <ReturnType>(callback: () => ReturnType | void = () => { }): ReturnType => {
-    const result = useRef<ReturnType | void>();
-    const hasBeenCalled = useRef<boolean>(false);
-    if (hasBeenCalled.current) return result.current as ReturnType;
-    hasBeenCalled.current = true;
-    result.current = callback();
-    return result.current as ReturnType;
+const useConstructor = <ReturnType>(callback: () => ReturnType | void = () => {}): ReturnType => {
+  const result = useRef<ReturnType | void>();
+  const hasBeenCalled = useRef<boolean>(false);
+
+  if (hasBeenCalled.current) return result.current as ReturnType;
+
+  hasBeenCalled.current = true;
+  result.current = callback();
+
+  return result.current as ReturnType;
 };
 
 export default useConstructor;

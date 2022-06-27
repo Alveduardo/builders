@@ -1,59 +1,43 @@
 import React, { memo } from 'react';
 import { View } from 'react-native';
-import IconButton from '../../IconButton';
+
 import Label from '../../Label';
+import IconButton from '../../IconButton';
 import TempIndicator from '../../TempIndicator';
-import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+
 import { Icon } from 'react-native-vector-icons/Icon';
-import { getIconWeather } from '../../../utils/weather/weather-utils';
-import { areEqualListProps, isIncludedWord } from '../../../utils';
-import { getDateFromString, getPeriod } from '../../../contexts/Time/Time-utils';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
-export interface ItemT {
-  dt_txt: string;
-  main: {
-    temp: number;
-    temp_min: number;
-    temp_max: number;
-  };
-  weather: [
-    {
-      description: string;
-    },
-  ];
-  rain?: {};
-}
+import { ITEM } from './Item-consts';
+import { ItemProps } from './Item-types';
+import { useItemConfig } from './Item-controllers';
 
-export interface ItemProps {
-  item: ItemT;
-  index: number;
-}
+import { areEqualListProps } from '../../../utils';
 
 const Item = memo(({ item, index }: ItemProps): JSX.Element => {
-  const split = item.dt_txt.split(' ');
-  const hour = split[1].substring(0, 5);
-
-  const period = getPeriod(getDateFromString(item.dt_txt));
-  const isRain = item?.rain ? true : false;
-
-  const iconName = getIconWeather(period, isRain, isIncludedWord(item.weather[0].description, 'limpo'));
+  const {
+    state: { hour, iconName },
+    styles: { containerStyle, iconStyle },
+  } = useItemConfig({ item });
 
   return (
-    <View
-      style={{
-        paddingHorizontal: 32,
-        width: '100%',
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'center',
-        marginBottom: 16,
-      }}
-    >
-      <Label size='xSmall' style={{}}>
+    <View testID={ITEM.TEST_ID.CONTAINER} style={containerStyle}>
+      <Label testID={ITEM.TEST_ID.LABEL} size='xSmall'>
         {hour}
       </Label>
-      <IconButton type={FontAwesome5 as typeof Icon} name={iconName} style={{ flex: 1 }} size={'xxxSmall'} disabled />
-      <TempIndicator min={Math.round(item.main.temp_min)} max={Math.round(item.main.temp_max)} />
+      <IconButton
+        testID={ITEM.TEST_ID.ICON_BUTTON}
+        type={FontAwesome5 as typeof Icon}
+        name={iconName}
+        size={'xxxSmall'}
+        style={iconStyle}
+        disabled
+      />
+      <TempIndicator
+        testID={ITEM.TEST_ID.TEMP_INDICATOR}
+        min={Math.round(item.main.temp_min)}
+        max={Math.round(item.main.temp_max)}
+      />
     </View>
   );
 }, areEqualListProps);

@@ -4,7 +4,7 @@ import { imagesList } from './images-list';
 
 export const getImage = (time: Time['period'] = 'day', isRain: boolean = false) => {
   const min: number = 1;
-  const max: number = isRain ? 5 : 12;
+  const max: number = isRain ? 4 : 8;
 
   let period: string = time === 'day' ? 'd' : 'n';
 

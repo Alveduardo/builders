@@ -1,0 +1,145 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TempIndicator -> Snapshot -> Deve corresponder ao componente com as props default 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flexDirection": "row",
+    }
+  }
+  testID="TEMP_INDICATOR_CONTAINER_TEST_ID"
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#FFF",
+          "fontSize": 16,
+        },
+        undefined,
+      ]
+    }
+    testID="TEMP_INDICATOR_MIN_TEST_ID"
+  >
+    0
+    °
+  </Text>
+  <LinearGradient
+    colors={
+      Array [
+        "#b6f29b",
+        "#ff6a38",
+      ]
+    }
+    end={
+      Object {
+        "x": 1,
+        "y": 0,
+      }
+    }
+    start={
+      Object {
+        "x": 0,
+        "y": 0,
+      }
+    }
+    style={
+      Object {
+        "borderRadius": 999,
+        "height": 6,
+        "marginHorizontal": 8,
+        "width": 80,
+      }
+    }
+    testID="TEMP_INDICATOR_GRADIENT_TEST_ID"
+  />
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#FFF",
+          "fontSize": 16,
+        },
+        undefined,
+      ]
+    }
+    testID="TEMP_INDICATOR_MAX_TEST_ID"
+  >
+    0
+    °
+  </Text>
+</View>
+`;
+
+exports[`TempIndicator -> Snapshot -> Deve corresponder ao componente com as props mais utilizadas 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flexDirection": "row",
+    }
+  }
+  testID="TEMP_INDICATOR_CONTAINER_TEST_ID"
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#FFF",
+          "fontSize": 16,
+        },
+        undefined,
+      ]
+    }
+    testID="TEMP_INDICATOR_MIN_TEST_ID"
+  >
+    0
+    °
+  </Text>
+  <LinearGradient
+    colors={
+      Array [
+        "#b6f29b",
+        "#ff6a38",
+      ]
+    }
+    end={
+      Object {
+        "x": 1,
+        "y": 0,
+      }
+    }
+    start={
+      Object {
+        "x": 0,
+        "y": 0,
+      }
+    }
+    style={
+      Object {
+        "borderRadius": 999,
+        "height": 6,
+        "marginHorizontal": 8,
+        "width": 80,
+      }
+    }
+    testID="TEMP_INDICATOR_GRADIENT_TEST_ID"
+  />
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#FFF",
+          "fontSize": 16,
+        },
+        undefined,
+      ]
+    }
+    testID="TEMP_INDICATOR_MAX_TEST_ID"
+  >
+    0
+    °
+  </Text>
+</View>
+`;

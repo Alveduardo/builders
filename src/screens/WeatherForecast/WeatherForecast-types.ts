@@ -25,15 +25,17 @@ export interface WeatherForecastConfig {
 
 export interface WeatherForecastStyles {
   containerStyle: ViewStyle;
-  contentStyle: ViewStyle;
+  containerContentStyle: ViewStyle;
   goBackIconStyle: ViewStyle;
   tempMaxMinStyle: ViewStyle;
-  forecastLabelStyle: TextStyle;
   containerListStyle: ViewStyle;
   containerBottomStyle: ViewStyle;
   containerCardStyle: ViewStyle;
   containerTitleCardStyle: ViewStyle;
-  borderRounded: ViewStyle;
+  sunriseContentStyle: ViewStyle;
+  marginRightSmall: ViewStyle;
+  marginRightRegular: ViewStyle;
+  marginBottomDisplay: ViewStyle;
   textAlignCenter: TextStyle;
 }
 

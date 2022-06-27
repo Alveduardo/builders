@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Label -> Snapshot -> Deve corresponder ao componente com as props default 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "color": "#FFF",
+        "fontSize": 16,
+      },
+      undefined,
+    ]
+  }
+  testID="LABEL_CONTAINER_TEST_ID"
+>
+  txt example
+</Text>
+`;
+
+exports[`Label -> Snapshot -> Deve corresponder ao componente com as props mais utilizadas 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "color": "#FF0000",
+        "fontSize": 18,
+      },
+      undefined,
+    ]
+  }
+  testID="LABEL_CONTAINER_TEST_ID"
+>
+  txt example
+</Text>
+`;

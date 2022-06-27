@@ -77,6 +77,7 @@ export default ({ navigation }: DashboardProps) => {
               name={'arrow-right-top'}
               color={'#FFF'}
               size={'regular'}
+              activeOpacity={0.6}
               onPress={handlePress}
               style={containerStyle}
             />

@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header -> Snapshot -> Deve corresponder ao componente com as props default 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "color": "#FFF",
+        "fontSize": 18,
+      },
+      Object {
+        "marginBottom": 16,
+        "opacity": 0.8,
+        "textAlign": "center",
+      },
+    ]
+  }
+  testID="HEADER_LABEL_TEST_ID"
+>
+  title
+</Text>
+`;
+
+exports[`Header -> Snapshot -> Deve corresponder ao componente com as props mais utilizadas 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "color": "#FFF",
+        "fontSize": 18,
+      },
+      Object {
+        "marginBottom": 16,
+        "opacity": 0.8,
+        "textAlign": "center",
+      },
+    ]
+  }
+  testID="HEADER_LABEL_TEST_ID"
+>
+  title
+</Text>
+`;
