@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1656312511527" clover="3.2.0">
-  <project timestamp="1656312511527" name="All files">
-    <metrics statements="53" coveredstatements="44" conditionals="20" coveredconditionals="15" methods="10" coveredmethods="10" elements="83" coveredelements="69" complexity="0" loc="53" ncloc="53" packages="6" files="19" classes="19"/>
+<coverage generated="1656544626443" clover="3.2.0">
+  <project timestamp="1656544626443" name="All files">
+    <metrics statements="84" coveredstatements="68" conditionals="39" coveredconditionals="22" methods="17" coveredmethods="14" elements="140" coveredelements="104" complexity="0" loc="84" ncloc="84" packages="9" files="29" classes="29"/>
     <package name="components.IconButton">
-      <metrics statements="5" coveredstatements="5" conditionals="6" coveredconditionals="6" methods="1" coveredmethods="1"/>
+      <metrics statements="10" coveredstatements="10" conditionals="8" coveredconditionals="8" methods="2" coveredmethods="2"/>
       <file name="IconButton-consts.ts" path="/Users/eduardo/mobile/builders/src/components/IconButton/IconButton-consts.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="2" type="stmt"/>
+      </file>
+      <file name="IconButton-controllers.ts" path="/Users/eduardo/mobile/builders/src/components/IconButton/IconButton-controllers.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="10" count="19" type="stmt"/>
+        <line num="12" count="19" type="cond" truecount="2" falsecount="0"/>
+        <line num="14" count="19" type="stmt"/>
+      </file>
+      <file name="IconButton-styles.ts" path="/Users/eduardo/mobile/builders/src/components/IconButton/IconButton-styles.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="2" type="stmt"/>
       </file>
       <file name="IconButton-types.ts" path="/Users/eduardo/mobile/builders/src/components/IconButton/IconButton-types.ts">
         <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
@@ -18,12 +29,26 @@
         <line num="27" count="19" type="stmt"/>
         <line num="29" count="19" type="stmt"/>
       </file>
+      <file name="index.ts" path="/Users/eduardo/mobile/builders/src/components/IconButton/index.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
     </package>
     <package name="components.Label">
-      <metrics statements="4" coveredstatements="4" conditionals="3" coveredconditionals="3" methods="1" coveredmethods="1"/>
+      <metrics statements="9" coveredstatements="9" conditionals="3" coveredconditionals="3" methods="2" coveredmethods="2"/>
       <file name="Label-consts.ts" path="/Users/eduardo/mobile/builders/src/components/Label/Label-consts.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="4" type="stmt"/>
+      </file>
+      <file name="Label-controllers.ts" path="/Users/eduardo/mobile/builders/src/components/Label/Label-controllers.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="4" type="stmt"/>
+        <line num="10" count="30" type="stmt"/>
+        <line num="12" count="30" type="stmt"/>
+        <line num="14" count="30" type="stmt"/>
+      </file>
+      <file name="Label-styles.ts" path="/Users/eduardo/mobile/builders/src/components/Label/Label-styles.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="4" type="stmt"/>
       </file>
       <file name="Label-types.ts" path="/Users/eduardo/mobile/builders/src/components/Label/Label-types.ts">
         <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
@@ -33,6 +58,9 @@
         <line num="7" count="4" type="cond" truecount="3" falsecount="0"/>
         <line num="10" count="30" type="stmt"/>
         <line num="12" count="30" type="stmt"/>
+      </file>
+      <file name="index.ts" path="/Users/eduardo/mobile/builders/src/components/Label/index.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       </file>
     </package>
     <package name="components.List.Header">
@@ -108,14 +136,17 @@
         <line num="15" count="6" type="stmt"/>
         <line num="17" count="6" type="stmt"/>
       </file>
+      <file name="index.ts" path="/Users/eduardo/mobile/builders/src/components/TempIndicator/index.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
     </package>
     <package name="contexts.Time">
-      <metrics statements="15" coveredstatements="6" conditionals="8" coveredconditionals="5" methods="2" coveredmethods="2"/>
+      <metrics statements="15" coveredstatements="6" conditionals="8" coveredconditionals="6" methods="2" coveredmethods="2"/>
       <file name="Time-utils.ts" path="/Users/eduardo/mobile/builders/src/contexts/Time/Time-utils.ts">
-        <metrics statements="15" coveredstatements="6" conditionals="8" coveredconditionals="5" methods="2" coveredmethods="2"/>
+        <metrics statements="15" coveredstatements="6" conditionals="8" coveredconditionals="6" methods="2" coveredmethods="2"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="5" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="5" count="2" type="cond" truecount="2" falsecount="0"/>
         <line num="7" count="2" type="cond" truecount="1" falsecount="1"/>
         <line num="10" count="1" type="stmt"/>
         <line num="11" count="2" type="cond" truecount="1" falsecount="1"/>
@@ -128,6 +159,45 @@
         <line num="22" count="0" type="stmt"/>
         <line num="23" count="0" type="stmt"/>
         <line num="25" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="utils">
+      <metrics statements="13" coveredstatements="6" conditionals="6" coveredconditionals="0" methods="4" coveredmethods="1"/>
+      <file name="index.ts" path="/Users/eduardo/mobile/builders/src/utils/index.ts">
+        <metrics statements="13" coveredstatements="6" conditionals="6" coveredconditionals="0" methods="4" coveredmethods="1"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="9" count="2" type="cond" truecount="0" falsecount="2"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="20" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="25" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="26" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="utils.colors">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="colors-consts.ts" path="/Users/eduardo/mobile/builders/src/utils/colors/colors-consts.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="utils.weather">
+      <metrics statements="7" coveredstatements="7" conditionals="11" coveredconditionals="4" methods="1" coveredmethods="1"/>
+      <file name="weather-utils.ts" path="/Users/eduardo/mobile/builders/src/utils/weather/weather-utils.ts">
+        <metrics statements="7" coveredstatements="7" conditionals="11" coveredconditionals="4" methods="1" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="10" count="2" type="cond" truecount="2" falsecount="2"/>
+        <line num="12" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="15" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="17" count="2" type="stmt"/>
       </file>
     </package>
   </project>

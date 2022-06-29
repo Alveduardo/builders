@@ -49,3 +49,9 @@ yarn ios
 ```
 yarn android
 ```
+
+### Testes
+
+```
+yarn test
+```

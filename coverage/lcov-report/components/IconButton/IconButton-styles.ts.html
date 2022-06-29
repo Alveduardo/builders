@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for components/IconButton/IconButton-types.ts</title>
+    <title>Code coverage report for components/IconButton/IconButton-styles.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">components/IconButton</a> IconButton-types.ts</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">components/IconButton</a> IconButton-styles.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
                 <span class='fraction'>0/0</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
                 <span class='fraction'>0/0</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -93,14 +93,9 @@
 <a name='L28'></a><a href='#L28'>28</a>
 <a name='L29'></a><a href='#L29'>29</a>
 <a name='L30'></a><a href='#L30'>30</a>
-<a name='L31'></a><a href='#L31'>31</a>
-<a name='L32'></a><a href='#L32'>32</a>
-<a name='L33'></a><a href='#L33'>33</a>
-<a name='L34'></a><a href='#L34'>34</a>
-<a name='L35'></a><a href='#L35'>35</a>
-<a name='L36'></a><a href='#L36'>36</a>
-<a name='L37'></a><a href='#L37'>37</a>
-<a name='L38'></a><a href='#L38'>38</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L31'></a><a href='#L31'>31</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -128,52 +123,36 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { ActivityIndicatorProps, TouchableOpacityProps, ViewStyle } from 'react-native';
-import { Icon, IconProps } from 'react-native-vector-icons/Icon';
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { IconButtonStyles } from './IconButton-types';
 &nbsp;
-export type Size = 'xxxSmall' | 'xxSmall' | 'xSmall' | 'small' | 'regular' | 'large';
-&nbsp;
-export type SizeStyles = {
-  [key in Size]: {
-    iconSize: number;
-  };
+export const iconButtonStyles: IconButtonStyles = {
+  defaultStyles: {
+    containerStyle: {
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+  },
+  sizeStyles: {
+    xxxSmall: {
+      iconSize: 16,
+    },
+    xxSmall: {
+      iconSize: 20,
+    },
+    xSmall: {
+      iconSize: 28,
+    },
+    small: {
+      iconSize: 32,
+    },
+    regular: {
+      iconSize: 48,
+    },
+    large: {
+      iconSize: 64,
+    },
+  },
 };
-&nbsp;
-interface DefaultStyles {
-  containerStyle: ViewStyle;
-}
-&nbsp;
-export interface IconButtonStyles {
-  defaultStyles: DefaultStyles;
-  sizeStyles: SizeStyles;
-}
-&nbsp;
-interface StateConfig {
-  iconProps: IconProps;
-  sizeIndicator: ActivityIndicatorProps['size'];
-}
-&nbsp;
-type StylesConfig = DefaultStyles;
-&nbsp;
-export interface IconButtonConfig {
-  state: StateConfig;
-  styles: StylesConfig;
-}
-&nbsp;
-export interface IconButtonProps extends Omit&lt;IconProps, 'size' | 'style'&gt;, TouchableOpacityProps {
-  type: typeof Icon;
-  size?: Size;
-  loading?: boolean;
-}
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
