@@ -1,11 +1,11 @@
-import axios from "axios";
-import { WEATHER } from "../utils/weather/weather-consts";
+import axios from 'axios';
+import { WEATHER } from '../contexts/Weather';
 
 const api = axios.create({
-    baseURL: WEATHER.BASE_URL,
-    params: {
-        appid: WEATHER.API_KEY
-    }
-})
+  baseURL: WEATHER.API.BASE_URL,
+  params: {
+    appid: WEATHER.API.KEY,
+  },
+});
 
-export default api
+export default api;

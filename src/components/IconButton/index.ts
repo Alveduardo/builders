@@ -1,5 +1,5 @@
-import IconButton from './IconButton'
-import { IconButtonProps, IconButtonStyles } from './IconButton-types'
+import IconButton from './IconButton';
+import { IconButtonProps } from './IconButton-types';
 
-export default IconButton
-export { IconButtonProps, IconButtonStyles }
+export default IconButton;
+export { IconButtonProps };

@@ -1,4 +1,6 @@
+import { Color } from './colors-types';
+
 export const COLORS = {
-  TEMP_GRADIENTS: ['#b6f29b', '#ff6a38'],
-  SPLASH_GRADIENTS: ['#043174', '#036f93'],
+  PRIMARY: '#043174' as Color,
+  SECONDARY: '#036f93' as Color,
 };

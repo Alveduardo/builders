@@ -1,9 +1,14 @@
 import _ from 'lodash';
-import { Platform } from 'react-native';
+import { Platform, StatusBarProps } from 'react-native';
 
 export const GLOBAL = {
   IS_ANDROID: Platform.OS === 'android',
   IS_IOS: Platform.OS === 'ios',
+};
+
+export const statusBarProps: Pick<StatusBarProps, 'translucent' | 'backgroundColor'> = {
+  translucent: true,
+  backgroundColor: 'transparent',
 };
 
 export const isIncludedWord = (string: string = '', word: string = ''): boolean => {

@@ -1,8 +1,10 @@
-import { ViewStyle } from 'react-native';
+import { TextStyle, ViewStyle } from 'react-native';
 
 interface DefaultStyles {
   containerStyle: ViewStyle;
+  labelStyle: TextStyle;
   iconStyle: ViewStyle;
+  tempIndicatorStyle: ViewStyle;
 }
 
 export interface ItemStyles {

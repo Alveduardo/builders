@@ -1,5 +1,6 @@
 import React from 'react';
 import { ImageBackground, ImageURISource, ScrollView, View } from 'react-native';
+
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Feather from 'react-native-vector-icons/Feather';
 import AntDesign from 'react-native-vector-icons/AntDesign';

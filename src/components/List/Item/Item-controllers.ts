@@ -1,12 +1,13 @@
-import { getDateFromString, getPeriod } from '../../../contexts/Time/Time-utils';
-import { isIncludedWord } from '../../../utils';
-import { getIconWeather } from '../../../utils/weather/weather-utils';
 import { itemStyles } from './Item-styles';
 import { ItemConfig, ItemProps } from './Item-types';
 
+import { isIncludedWord } from '../../../utils';
+import { getDateFromString } from '../../../utils/date/date-utils';
+import { getIconWeather, getPeriod } from '../../../contexts/Weather';
+
 export const useItemConfig = ({ item }: Pick<ItemProps, 'item'>): ItemConfig => {
   const {
-    defaultStyles: { containerStyle, iconStyle },
+    defaultStyles: { containerStyle, labelStyle, iconStyle, tempIndicatorStyle },
   } = itemStyles;
 
   const split = item.dt_txt?.split(' ');
@@ -23,8 +24,10 @@ export const useItemConfig = ({ item }: Pick<ItemProps, 'item'>): ItemConfig => 
       iconName,
     },
     styles: {
+      labelStyle,
       containerStyle,
       iconStyle,
+      tempIndicatorStyle,
     },
   };
 };

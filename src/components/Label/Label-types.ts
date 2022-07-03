@@ -1,10 +1,19 @@
 import { TextProps, TextStyle } from 'react-native';
 import { Color } from '../../utils/colors/colors-types';
 
-export type Size = 'xxSmall' | 'xSmall' | 'small' | 'regular' | 'large' | 'xLarge' | 'xxLarge' | 'xxxLarge' | 'display';
+export type LabelSize =
+  | 'xxSmall'
+  | 'xSmall'
+  | 'small'
+  | 'regular'
+  | 'large'
+  | 'xLarge'
+  | 'xxLarge'
+  | 'xxxLarge'
+  | 'display';
 
 export type SizeStyles = {
-  [key in Size]: {
+  [key in LabelSize]: {
     textStyle: TextStyle;
   };
 };
@@ -26,5 +35,5 @@ export interface LabelConfig {
 
 export interface LabelProps extends TextProps {
   color?: Color;
-  size?: Size;
+  size?: LabelSize;
 }

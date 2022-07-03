@@ -8,5 +8,7 @@ export const TEMP_INDICATOR = {
   GRADIENT: {
     START: { x: 0, y: 0 },
     END: { x: 1, y: 0 },
+    COLORS: ['#b6f29b', '#ff6a38'],
   },
+  ALLOWED_PROPERTIES: ['width'],
 };

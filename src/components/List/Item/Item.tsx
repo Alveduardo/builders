@@ -17,12 +17,12 @@ import { areEqualListProps } from '../../../utils';
 const Item = memo(({ item, index }: ItemProps): JSX.Element => {
   const {
     state: { hour, iconName },
-    styles: { containerStyle, iconStyle },
+    styles: { containerStyle, labelStyle, iconStyle, tempIndicatorStyle },
   } = useItemConfig({ item });
 
   return (
     <View testID={ITEM.TEST_ID.CONTAINER} style={containerStyle}>
-      <Label testID={ITEM.TEST_ID.LABEL} size='xSmall'>
+      <Label style={labelStyle} testID={ITEM.TEST_ID.LABEL} size='xSmall'>
         {hour}
       </Label>
       <IconButton
@@ -31,10 +31,10 @@ const Item = memo(({ item, index }: ItemProps): JSX.Element => {
         name={iconName}
         size={'xxxSmall'}
         style={iconStyle}
-        disabled
       />
       <TempIndicator
         testID={ITEM.TEST_ID.TEMP_INDICATOR}
+        style={tempIndicatorStyle}
         min={Math.round(item.main.temp_min)}
         max={Math.round(item.main.temp_max)}
       />

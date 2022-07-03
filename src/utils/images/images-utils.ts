@@ -1,8 +1,9 @@
 import { getRandomInt } from '..';
-import { Time } from '../../contexts/Time/Time-types';
+import { Period } from '../../contexts/Weather';
+
 import { imagesList } from './images-list';
 
-export const getImage = (time: Time['period'] = 'day', isRain: boolean = false) => {
+export const getImage = (time: Period = 'day', isRain: boolean = false) => {
   const min: number = 1;
   const max: number = isRain ? 4 : 8;
 

@@ -2,18 +2,19 @@ import React from 'react';
 import { ImageBackground, View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import Animated, { FadeOut, FadeIn } from 'react-native-reanimated';
-import { Icon } from 'react-native-vector-icons/Icon';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
+import { Icon } from 'react-native-vector-icons/Icon';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+
+import { DASHBOARD } from './Dashboard-consts';
 import { DashboardProps } from './Dashboard-types';
 import { useDashboardConfig } from './Dashboard-controllers';
 
 import Label from '../../components/Label';
+import ClockLabel from '../../components/ClockLabel';
 import IconButton from '../../components/IconButton';
 
-import { COLORS } from '../../utils/colors/colors-consts';
-import { getFormatedDate } from '../../utils/date/date-utils';
 import { kelvinToCelsius } from '../../utils/temp/temp-utils';
 
 const AnimatedLG = Animated.createAnimatedComponent(LinearGradient);
@@ -21,8 +22,8 @@ const AnimatedIB = Animated.createAnimatedComponent(ImageBackground);
 
 export default ({ navigation }: DashboardProps) => {
   const {
-    state: { isLoading, weather, img, iconName },
-    methods: { updateWeather, handlePress },
+    state: { weather, img, iconName },
+    methods: { iconButtonRef, updateWeather, handlePress },
     styles: {
       containerStyle,
       contentStyle,
@@ -37,28 +38,25 @@ export default ({ navigation }: DashboardProps) => {
     },
   } = useDashboardConfig({ navigation });
 
-  if (!weather) return <AnimatedLG exiting={FadeOut} colors={COLORS.SPLASH_GRADIENTS} style={containerStyle} />;
+  if (!weather) return <AnimatedLG exiting={FadeOut} colors={DASHBOARD.SPLASH_GRADIENTS} style={containerStyle} />;
 
   return (
     <AnimatedIB source={img!} fadeDuration={0} entering={FadeIn} style={containerStyle}>
       <View style={contentStyle}>
         <IconButton
-          type={MaterialCommunityIcons}
-          name={'cloud-sync'}
-          loading={isLoading}
+          ref={iconButtonRef}
           activeOpacity={1}
-          disabled={isLoading}
+          name={'cloud-sync'}
           style={updateIconStyle}
           onPress={updateWeather}
+          type={MaterialCommunityIcons}
         />
         <View style={topInfoWrapperStyle}>
           <View>
             <Label size='xLarge' style={fontBoldStyle}>
               {weather?.name}
             </Label>
-            <Label size='xSmall' style={fontBoldStyle}>
-              {getFormatedDate()}
-            </Label>
+            <ClockLabel size={'xSmall'} style={fontBoldStyle} />
           </View>
 
           <View style={flexDirectionRowStyle}>

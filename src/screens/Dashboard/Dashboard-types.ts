@@ -1,15 +1,14 @@
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { TextStyle, ViewStyle } from 'react-native';
-import { TimeContextState } from '../../contexts/Time/Time-types';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { WeatherContextState, WeatherData } from '../../contexts/Weather';
 import { AppRootStackParamList } from '../../utils/navigation/navigator-types';
-import { Weather } from '../../utils/weather/weather-types';
 
-interface StateConfig extends Pick<TimeContextState, 'img' | 'iconName'> {
-  isLoading: boolean;
-  weather?: Weather['weather'];
+interface StateConfig extends Pick<WeatherContextState, 'img' | 'iconName'> {
+  weather?: WeatherData['weather'];
 }
 
 interface MethodsConfig {
+  iconButtonRef: any;
   updateWeather: () => void;
   handlePress: () => void;
 }

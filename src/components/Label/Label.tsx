@@ -7,10 +7,10 @@ import { LabelProps } from './Label-types';
 const Label = ({ children, color = '#FFF', size = 'small', style = undefined, ...rest }: LabelProps): JSX.Element => {
   const {
     styles: { textStyle },
-  } = useLabelConfig({ color, size });
+  } = useLabelConfig({ color, size, style });
 
   return (
-    <Text testID={LABEL.TEST_ID.CONTAINER} {...rest} style={[textStyle, style]}>
+    <Text testID={LABEL.TEST_ID.CONTAINER} {...{ rest, style: [textStyle, style] }}>
       {children}
     </Text>
   );
