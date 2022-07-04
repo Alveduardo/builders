@@ -2,10 +2,6 @@ import { Dispatch } from 'react';
 import { TouchableOpacityProps, ViewStyle } from 'react-native';
 import { Icon, IconProps } from 'react-native-vector-icons/Icon';
 
-export interface IconButtonRef {
-  setLoading: (value: boolean) => void;
-}
-
 export type IconButtonSize = 'xxxSmall' | 'xxSmall' | 'xSmall' | 'small' | 'regular' | 'large';
 
 export type SizeStyles = {
@@ -13,6 +9,10 @@ export type SizeStyles = {
     iconSize: number;
   };
 };
+
+export interface IconButtonRef {
+  setLoading: (value: boolean) => void;
+}
 
 interface DefaultStyles {
   containerStyle: ViewStyle;
@@ -33,7 +33,7 @@ interface MethodsConfig {
   setLoading: Dispatch<boolean>;
 }
 
-type StylesConfig = DefaultStyles;
+interface StylesConfig extends DefaultStyles {}
 
 export interface IconButtonConfig {
   state: StateConfig;

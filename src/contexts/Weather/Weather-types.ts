@@ -1,7 +1,16 @@
 import { ImageSourcePropType } from 'react-native';
 import { IconProps } from 'react-native-vector-icons/Icon';
 
-export interface WeatherData {
+export type Period = 'day' | 'night';
+
+export interface Location {
+  latitude?: number;
+  longitude?: number;
+}
+
+export interface Weather {
+  period: Period;
+  isRain: boolean;
   weather: {
     main: {
       pressure: number;
@@ -29,25 +38,12 @@ export interface WeatherData {
   forecast: any;
 }
 
-export type Period = 'day' | 'night';
-
-export interface Location {
-  latitude?: number;
-  longitude?: number;
-}
-
 export interface WeatherContextProps {
   children: JSX.Element;
 }
 
-export interface Weather {
-  period: Period;
-  isRain: boolean;
-}
-
 export interface WeatherContextState {
-  data: WeatherData | null;
-  time: Weather | null;
+  data: Weather | null;
   img: ImageSourcePropType | null;
   iconName: IconProps['name'] | null;
 }

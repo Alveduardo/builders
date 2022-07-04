@@ -1,5 +1,20 @@
 import { TextStyle, ViewStyle } from 'react-native';
 
+export interface ItemT {
+  dt_txt: string;
+  main: {
+    temp: number;
+    temp_min: number;
+    temp_max: number;
+  };
+  weather: [
+    {
+      description: string;
+    },
+  ];
+  rain?: {};
+}
+
 interface DefaultStyles {
   containerStyle: ViewStyle;
   labelStyle: TextStyle;
@@ -16,26 +31,11 @@ interface StateConfig {
   iconName: string;
 }
 
-type StylesConfig = DefaultStyles;
+interface StylesConfig extends DefaultStyles {}
 
 export interface ItemConfig {
   state: StateConfig;
   styles: StylesConfig;
-}
-
-export interface ItemT {
-  dt_txt: string;
-  main: {
-    temp: number;
-    temp_min: number;
-    temp_max: number;
-  };
-  weather: [
-    {
-      description: string;
-    },
-  ];
-  rain?: {};
 }
 
 export interface ItemProps {

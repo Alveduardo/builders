@@ -2,6 +2,11 @@
 
 exports[`Button -> Snapshot -> Deve corresponder ao componente com as props default 1`] = `
 <View
+  accessibilityState={
+    Object {
+      "disabled": false,
+    }
+  }
   accessible={true}
   focusable={true}
   onClick={[Function]}
@@ -24,6 +29,7 @@ exports[`Button -> Snapshot -> Deve corresponder ao componente com as props defa
   testID="BUTTON_CONTAINER_TEST_ID"
 >
   <Text
+    rest={Object {}}
     style={
       Array [
         Object {
@@ -35,13 +41,18 @@ exports[`Button -> Snapshot -> Deve corresponder ao componente com as props defa
     }
     testID="LABEL_CONTAINER_TEST_ID"
   >
-    test
+    Button label
   </Text>
 </View>
 `;
 
 exports[`Button -> Snapshot -> Deve corresponder ao componente com as props mais utilizadas 1`] = `
 <View
+  accessibilityState={
+    Object {
+      "disabled": false,
+    }
+  }
   accessible={true}
   focusable={true}
   onClick={[Function]}
@@ -64,6 +75,7 @@ exports[`Button -> Snapshot -> Deve corresponder ao componente com as props mais
   testID="BUTTON_CONTAINER_TEST_ID"
 >
   <Text
+    rest={Object {}}
     style={
       Array [
         Object {
@@ -75,7 +87,7 @@ exports[`Button -> Snapshot -> Deve corresponder ao componente com as props mais
     }
     testID="LABEL_CONTAINER_TEST_ID"
   >
-    test
+    Button label
   </Text>
 </View>
 `;

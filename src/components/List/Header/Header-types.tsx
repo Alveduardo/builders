@@ -8,7 +8,7 @@ export interface HeaderStyles {
   defaultStyles: DefaultStyles;
 }
 
-type StylesConfig = DefaultStyles;
+interface StylesConfig extends DefaultStyles {}
 
 export interface HeaderConfig {
   styles: StylesConfig;

@@ -1,7 +1,9 @@
 import { TouchableHighlightProps, ViewStyle } from 'react-native';
+
 import { Color } from '../../utils/colors/colors-types';
 
 export type ButtonSize = 'regular';
+
 export type ButtonKind = 'primary' | 'secondary';
 
 interface DefaultStyles {
@@ -100,5 +102,5 @@ export interface ButtonProps extends TouchableHighlightProps {
   /**
    * The button's width. The possible values are `'auto'`, `'100%'`, or a numeric value representing the amount of pixels.
    */
-  width?: number | string;
+  width?: string | number;
 }

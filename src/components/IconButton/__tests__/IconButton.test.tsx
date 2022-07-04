@@ -1,7 +1,8 @@
 import React from 'react';
 import { render } from '@testing-library/react-native';
-import IconButton from '../IconButton';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+
+import IconButton from '../IconButton';
 import { ICON_BUTTON } from '../IconButton-consts';
 import { IconButtonSize } from '../IconButton-types';
 
@@ -9,15 +10,6 @@ const iconButtonPropsDefault = {
   type: AntDesign,
   name: 'home',
 };
-
-const describeEachLoading = [
-  {
-    loading: false,
-  },
-  {
-    loading: true,
-  },
-];
 
 const describeEachSize = [
   {
@@ -69,20 +61,28 @@ describe('IconButton ->', () => {
   });
   describe('props ->', () => {
     describe('loading ->', () => {
-      describe.each(describeEachLoading)('Para cada valor de loading ->', ({ loading }) => {
-        it(`Deve renderizar o componente de acordo com a prop ${loading}`, () => {
-          const { queryByTestId } = render(<IconButton {...iconButtonPropsDefault} {...{ loading }} />);
+      describe('true ->', () => {
+        it(`Deve renderizar o componente de acordo com a prop loading = true`, () => {
+          jest.spyOn(React, 'useState').mockImplementationOnce(() => [true, () => {}]);
 
-          // const componentActivityIndicator = queryByTestId(ICON_BUTTON.TEST_ID.ACTIVITY_INDICATOR);
-          // const componentIcon = queryByTestId(ICON_BUTTON.TEST_ID.ICON);
+          const { queryByTestId } = render(<IconButton {...iconButtonPropsDefault} />);
 
-          // if (loading) {
-          //   expect(componentActivityIndicator).toBeDefined();
-          //   expect(componentIcon).toBeNull();
-          // } else {
-          //   expect(componentActivityIndicator).toBeNull();
-          //   expect(componentIcon).toBeDefined();
-          // }
+          const componentActivityIndicator = queryByTestId(ICON_BUTTON.TEST_ID.ACTIVITY_INDICATOR);
+          const componentIcon = queryByTestId(ICON_BUTTON.TEST_ID.ICON);
+
+          expect(componentActivityIndicator).toBeDefined();
+          expect(componentIcon).toBeNull();
+        });
+      });
+      describe('false ->', () => {
+        it(`Deve renderizar o componente de acordo com a prop loading = false`, () => {
+          const { queryByTestId } = render(<IconButton {...iconButtonPropsDefault} />);
+
+          const componentActivityIndicator = queryByTestId(ICON_BUTTON.TEST_ID.ACTIVITY_INDICATOR);
+          const componentIcon = queryByTestId(ICON_BUTTON.TEST_ID.ICON);
+
+          expect(componentActivityIndicator).toBeNull();
+          expect(componentIcon).toBeDefined();
         });
       });
     });

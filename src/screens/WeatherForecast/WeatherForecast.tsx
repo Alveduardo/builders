@@ -56,9 +56,9 @@ export default ({ navigation }: WeatherForecastProps) => {
 
       <ScrollView
         bounces={false}
+        fadingEdgeLength={16}
         style={containerContentStyle}
         contentContainerStyle={containerContentStyle}
-        fadingEdgeLength={16}
         showsVerticalScrollIndicator={false}
       >
         <View style={containerListStyle}>
@@ -72,7 +72,7 @@ export default ({ navigation }: WeatherForecastProps) => {
         <View style={containerBottomStyle}>
           <View style={containerCardStyle}>
             <View style={containerTitleCardStyle}>
-              <IconButton size={'xxxSmall'} style={marginRightSmall} type={AntDesign} name={'eye'} disabled />
+              <IconButton size={'xxxSmall'} style={marginRightSmall} type={AntDesign} name={'eye'} />
               <Label size={'small'}>Visibilidade</Label>
             </View>
 
@@ -84,16 +84,16 @@ export default ({ navigation }: WeatherForecastProps) => {
           </View>
           <View style={containerCardStyle}>
             <View style={containerTitleCardStyle}>
-              <IconButton size={'xxxSmall'} style={marginRightSmall} type={Fontisto} name={'day-sunny'} disabled />
+              <IconButton size={'xxxSmall'} style={marginRightSmall} type={Fontisto} name={'day-sunny'} />
               <Label size={'small'}>Nascer do sol</Label>
             </View>
 
             <View style={sunriseContentStyle}>
-              <IconButton size={'xSmall'} style={marginRightRegular} type={Feather} name={'sunrise'} disabled />
+              <IconButton size={'xSmall'} style={marginRightRegular} type={Feather} name={'sunrise'} />
               <Label size={'large'}>{getDateFromUnix(weather?.sys.sunrise)}</Label>
             </View>
             <View style={sunriseContentStyle}>
-              <IconButton size={'xSmall'} style={marginRightRegular} type={Feather} name={'sunset'} disabled />
+              <IconButton size={'xSmall'} style={marginRightRegular} type={Feather} name={'sunset'} />
               <Label size={'large'}>{getDateFromUnix(weather?.sys.sunset)}</Label>
             </View>
           </View>

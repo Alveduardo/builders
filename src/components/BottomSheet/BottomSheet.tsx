@@ -2,14 +2,14 @@ import React from 'react';
 import { Modal, View } from 'react-native';
 import Animated, { FadeInDown, SlideOutDown } from 'react-native-reanimated';
 
+import { BOTTOM_SHEET } from './BottomSheet-consts';
+import { BottomSheetComponent } from './BottomSheet-types';
+import { useBottomSheetConfig } from './BottomSheet-controllers';
+
 import Label from '../Label';
 import Button from '../Button';
 
-import { useBottomSheetConfig } from './BottomSheet-controllers';
-
 import { COLORS } from '../../utils/colors/colors-consts';
-import { BottomSheetComponent } from './BottomSheet-types';
-import { BOTTOM_SHEET } from './BottomSheet-consts';
 
 //@ts-ignore
 const BottomSheet: BottomSheetComponent = (): JSX.Element => {

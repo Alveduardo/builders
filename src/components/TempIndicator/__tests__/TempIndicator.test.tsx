@@ -1,5 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react-native';
+
 import TempIndicator from '../TempIndicator';
 import { TEMP_INDICATOR } from '../TempIndicator-consts';
 

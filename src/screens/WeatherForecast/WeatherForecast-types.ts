@@ -1,7 +1,8 @@
 import { TextStyle, ViewStyle } from 'react-native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { WeatherContextState, WeatherData } from '../../contexts/Weather/Weather-types';
+
 import { AppRootStackParamList } from '../../utils/navigation/navigator-types';
+import { WeatherContextState, Weather } from '../../contexts/Weather/Weather-types';
 
 export interface WeatherForecastStyles {
   containerStyle: ViewStyle;
@@ -20,8 +21,8 @@ export interface WeatherForecastStyles {
 }
 
 interface StateConfig extends Pick<WeatherContextState, 'img'> {
-  weather: WeatherData['weather'];
-  forecast: WeatherData['forecast'];
+  weather: Weather['weather'];
+  forecast: Weather['forecast'];
 }
 
 interface MethodsConfig {

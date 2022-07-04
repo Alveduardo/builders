@@ -3,22 +3,22 @@ import { Linking, PermissionsAndroid, StatusBar } from 'react-native';
 import Geolocation from 'react-native-geolocation-service';
 import SplashScreen from 'react-native-splash-screen';
 
+import { WEATHER } from './Weather-consts';
 import { getIconWeather, getPeriod } from './Weather-utils';
 import { WeatherContextProps, WeatherContextData, WeatherContextState, Location } from './Weather-types';
 
-import { GLOBAL, isIncludedWord } from '../../utils';
-import { getImage } from '../../utils/images/images-utils';
+import BottomSheet from '../../components/BottomSheet';
 
 import api from '../../services/api';
-import { WEATHER } from './Weather-consts';
-import BottomSheet from '../../components/BottomSheet';
+
+import { GLOBAL, isIncludedWord } from '../../utils';
+import { getImage } from '../../utils/images/images-utils';
 
 export const WeatherContext = createContext({} as WeatherContextData);
 
 export const WeatherProvider = ({ children }: WeatherContextProps): JSX.Element => {
   const [state, setState] = useState<WeatherContextState>({
     img: null,
-    time: null,
     data: null,
     iconName: null,
   });
@@ -81,16 +81,14 @@ export const WeatherProvider = ({ children }: WeatherContextProps): JSX.Element 
 
     if (weather)
       setState((oldState) => {
-        const { time: oldTime, img: oldImg, iconName: oldIconName } = oldState;
+        const { data: oldData, img: oldImg, iconName: oldIconName } = oldState;
 
         const period = getPeriod();
         const isRain = weather?.rain ? true : false;
 
-        const time = { period, isRain };
-
         let img, iconName;
 
-        if (oldTime?.period !== period || oldTime?.isRain !== isRain) {
+        if (oldData?.period !== period || oldData?.isRain !== isRain) {
           img = getImage(period, isRain);
           iconName = getIconWeather(period, isRain, isIncludedWord(weather.weather[0].description, 'limpo'));
         } else {
@@ -102,8 +100,9 @@ export const WeatherProvider = ({ children }: WeatherContextProps): JSX.Element 
 
         return {
           img,
-          time,
           data: {
+            period,
+            isRain,
             weather,
             forecast,
           },

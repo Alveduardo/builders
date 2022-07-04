@@ -32,9 +32,10 @@ const Button = ({
   return (
     <TouchableHighlight
       testID={BUTTON.TEST_ID.CONTAINER}
+      {...rest}
       {...{
-        rest,
         style: buttonStyle,
+        disabled,
         onPress,
         onPressIn,
         onPressOut,

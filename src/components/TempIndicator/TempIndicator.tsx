@@ -14,7 +14,7 @@ const TempIndicator = ({ min, max, style, ...rest }: TempIndicatorProps): JSX.El
   } = useTempIndicatorConfig({ style });
 
   return (
-    <View testID={TEMP_INDICATOR.TEST_ID.CONTAINER} {...{ rest, style: [containerStyle, style] }}>
+    <View testID={TEMP_INDICATOR.TEST_ID.CONTAINER} {...rest} {...{ style: [containerStyle, style] }}>
       <Label testID={TEMP_INDICATOR.TEST_ID.MIN}>{min}°</Label>
       <LinearGradient
         style={gradientStyle}

@@ -1,5 +1,13 @@
 import { TextStyle, ViewStyle } from 'react-native';
 
+export interface BottomSheetState {
+  visible: boolean;
+  title: string;
+  caption: string;
+  primaryButton: DefaultButton;
+  secondaryButton: DefaultButton;
+}
+
 interface DefaultButton {
   label: string;
   onPress?: () => void;
@@ -8,14 +16,6 @@ interface DefaultButton {
 
 export interface BottomSheetStyles {
   defaultStyles: DefaultStyles;
-}
-
-export interface BottomSheetState {
-  visible: boolean;
-  title: string;
-  caption: string;
-  primaryButton: DefaultButton;
-  secondaryButton: DefaultButton;
 }
 
 interface DefaultStyles {

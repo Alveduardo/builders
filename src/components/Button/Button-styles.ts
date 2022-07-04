@@ -61,20 +61,20 @@ export const buttonStyles: ButtonStyles = {
     disabled: {
       primary: {
         buttonStyle: {
-          backgroundColor: 'red',
+          backgroundColor: 'gray',
         },
         textStyle: {
-          color: 'lightblue',
+          color: '#FFF',
         },
       },
       secondary: {
         buttonStyle: {
-          backgroundColor: 'gray',
+          backgroundColor: 'transparent',
           borderColor: 'gray',
           borderWidth: 3,
         },
         textStyle: {
-          color: 'black',
+          color: 'gray',
         },
       },
     },

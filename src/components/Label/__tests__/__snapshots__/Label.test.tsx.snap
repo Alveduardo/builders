@@ -2,6 +2,7 @@
 
 exports[`Label -> Snapshot -> Deve corresponder ao componente com as props default 1`] = `
 <Text
+  rest={Object {}}
   style={
     Array [
       Object {
@@ -19,6 +20,7 @@ exports[`Label -> Snapshot -> Deve corresponder ao componente com as props defau
 
 exports[`Label -> Snapshot -> Deve corresponder ao componente com as props mais utilizadas 1`] = `
 <Text
+  rest={Object {}}
   style={
     Array [
       Object {

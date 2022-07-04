@@ -1,7 +1,8 @@
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+
+import { useWeather } from '../../contexts/Weather';
 import { weatherForecastStyles } from './WeatherForecast-styles';
 import { WeatherForecastConfig, WeatherForecastProps } from './WeatherForecast-types';
-import { useWeather } from '../../contexts/Weather';
 
 export const useWeatherForecastConfig = ({ navigation }: WeatherForecastProps): WeatherForecastConfig => {
   const { top, bottom } = useSafeAreaInsets();

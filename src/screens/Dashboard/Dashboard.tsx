@@ -63,7 +63,7 @@ export default ({ navigation }: DashboardProps) => {
             <View>
               <Label size='display'>{`${kelvinToCelsius(weather?.main.temp)} \u2103`}</Label>
               <View style={flexDirectionRowStyle}>
-                <IconButton type={FontAwesome5 as typeof Icon} name={iconName!} size={'xSmall'} disabled />
+                <IconButton type={FontAwesome5 as typeof Icon} name={iconName!} size={'xSmall'} />
                 <Label size={'large'} style={weatherTypeStyle}>
                   {weather?.weather[0].description}
                 </Label>

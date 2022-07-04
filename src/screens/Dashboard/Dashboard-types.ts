@@ -3,7 +3,8 @@ import { TextStyle, ViewStyle } from 'react-native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 import { IconButtonRef } from '../../components/IconButton/IconButton-types';
-import { WeatherContextState, WeatherData } from '../../contexts/Weather/Weather-types';
+import { WeatherContextState, Weather } from '../../contexts/Weather/Weather-types';
+
 import { AppRootStackParamList } from '../../utils/navigation/navigator-types';
 
 export interface DashboardStyles {
@@ -20,7 +21,7 @@ export interface DashboardStyles {
 }
 
 interface StateConfig extends Pick<WeatherContextState, 'img' | 'iconName'> {
-  weather?: WeatherData['weather'];
+  weather?: Weather['weather'];
 }
 
 interface MethodsConfig {

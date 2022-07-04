@@ -9,7 +9,7 @@ export interface TempIndicatorStyles {
   defaultStyles: DefaultStyles;
 }
 
-type StylesConfig = DefaultStyles;
+interface StylesConfig extends DefaultStyles {}
 
 export interface TempIndicatorConfig {
   styles: StylesConfig;
