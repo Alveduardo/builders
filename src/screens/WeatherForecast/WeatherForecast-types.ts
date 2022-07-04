@@ -1,6 +1,6 @@
 import { TextStyle, ViewStyle } from 'react-native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { WeatherContextState, WeatherData } from '../../contexts/Weather';
+import { WeatherContextState, WeatherData } from '../../contexts/Weather/Weather-types';
 import { AppRootStackParamList } from '../../utils/navigation/navigator-types';
 
 export interface WeatherForecastStyles {

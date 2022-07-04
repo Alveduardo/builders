@@ -21,9 +21,9 @@ exports[`Button -> Snapshot -> Deve corresponder ao componente com as props defa
       "width": "100%",
     }
   }
+  testID="BUTTON_CONTAINER_TEST_ID"
 >
   <Text
-    rest={Object {}}
     style={
       Array [
         Object {
@@ -61,9 +61,9 @@ exports[`Button -> Snapshot -> Deve corresponder ao componente com as props mais
       "width": "100%",
     }
   }
+  testID="BUTTON_CONTAINER_TEST_ID"
 >
   <Text
-    rest={Object {}}
     style={
       Array [
         Object {

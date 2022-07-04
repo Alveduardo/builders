@@ -3,7 +3,7 @@ import { ItemConfig, ItemProps } from './Item-types';
 
 import { isIncludedWord } from '../../../utils';
 import { getDateFromString } from '../../../utils/date/date-utils';
-import { getIconWeather, getPeriod } from '../../../contexts/Weather';
+import { getIconWeather, getPeriod } from '../../../contexts/Weather/Weather-utils';
 
 export const useItemConfig = ({ item }: Pick<ItemProps, 'item'>): ItemConfig => {
   const {

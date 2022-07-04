@@ -4,11 +4,11 @@ import { WeatherForecastConfig, WeatherForecastProps } from './WeatherForecast-t
 import { useWeather } from '../../contexts/Weather';
 
 export const useWeatherForecastConfig = ({ navigation }: WeatherForecastProps): WeatherForecastConfig => {
+  const { top, bottom } = useSafeAreaInsets();
+
   const {
     state: { data, img },
   } = useWeather();
-
-  const { top, bottom } = useSafeAreaInsets();
 
   const {
     containerStyle,

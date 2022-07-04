@@ -3,7 +3,6 @@
 exports[`IconButton -> Snapshot -> Deve corresponder ao componente com as props default 1`] = `
 <View
   disabled={true}
-  rest={Object {}}
   style={
     Object {
       "alignItems": "center",
@@ -40,7 +39,6 @@ exports[`IconButton -> Snapshot -> Deve corresponder ao componente com as props 
 exports[`IconButton -> Snapshot -> Deve corresponder ao componente com as props mais utilizadas 1`] = `
 <View
   disabled={true}
-  rest={Object {}}
   style={
     Object {
       "alignItems": "center",

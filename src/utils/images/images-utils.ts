@@ -1,5 +1,5 @@
 import { getRandomInt } from '..';
-import { Period } from '../../contexts/Weather';
+import { Period } from '../../contexts/Weather/Weather-types';
 
 import { imagesList } from './images-list';
 

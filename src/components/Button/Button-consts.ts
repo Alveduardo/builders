@@ -1,3 +1,5 @@
 export const BUTTON = {
-  TEST_ID: {},
+  TEST_ID: {
+    CONTAINER: 'BUTTON_CONTAINER_TEST_ID',
+  },
 };

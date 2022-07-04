@@ -10,7 +10,7 @@ const Label = ({ children, color = '#FFF', size = 'small', style = undefined, ..
   } = useLabelConfig({ color, size, style });
 
   return (
-    <Text testID={LABEL.TEST_ID.CONTAINER} {...{ rest, style: [textStyle, style] }}>
+    <Text testID={LABEL.TEST_ID.CONTAINER} {...rest} {...{ style: [textStyle, style] }}>
       {children}
     </Text>
   );

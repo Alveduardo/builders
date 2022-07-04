@@ -7,6 +7,3 @@ export const useWeather = () => {
 };
 
 export { WeatherProvider };
-export * from './Weather-types';
-export * from './Weather-utils';
-export * from './Weather-consts';

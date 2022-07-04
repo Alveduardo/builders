@@ -15,11 +15,6 @@ exports[`TempIndicator -> Snapshot -> Deve corresponder ao componente com as pro
   testID="TEMP_INDICATOR_CONTAINER_TEST_ID"
 >
   <Text
-    rest={
-      Object {
-        "testID": "TEMP_INDICATOR_MIN_TEST_ID",
-      }
-    }
     style={
       Array [
         Object {
@@ -29,7 +24,7 @@ exports[`TempIndicator -> Snapshot -> Deve corresponder ao componente com as pro
         undefined,
       ]
     }
-    testID="LABEL_CONTAINER_TEST_ID"
+    testID="TEMP_INDICATOR_MIN_TEST_ID"
   >
     0
     °
@@ -64,11 +59,6 @@ exports[`TempIndicator -> Snapshot -> Deve corresponder ao componente com as pro
     testID="TEMP_INDICATOR_GRADIENT_TEST_ID"
   />
   <Text
-    rest={
-      Object {
-        "testID": "TEMP_INDICATOR_MAX_TEST_ID",
-      }
-    }
     style={
       Array [
         Object {
@@ -78,7 +68,7 @@ exports[`TempIndicator -> Snapshot -> Deve corresponder ao componente com as pro
         undefined,
       ]
     }
-    testID="LABEL_CONTAINER_TEST_ID"
+    testID="TEMP_INDICATOR_MAX_TEST_ID"
   >
     0
     °
@@ -101,11 +91,6 @@ exports[`TempIndicator -> Snapshot -> Deve corresponder ao componente com as pro
   testID="TEMP_INDICATOR_CONTAINER_TEST_ID"
 >
   <Text
-    rest={
-      Object {
-        "testID": "TEMP_INDICATOR_MIN_TEST_ID",
-      }
-    }
     style={
       Array [
         Object {
@@ -115,7 +100,7 @@ exports[`TempIndicator -> Snapshot -> Deve corresponder ao componente com as pro
         undefined,
       ]
     }
-    testID="LABEL_CONTAINER_TEST_ID"
+    testID="TEMP_INDICATOR_MIN_TEST_ID"
   >
     0
     °
@@ -150,11 +135,6 @@ exports[`TempIndicator -> Snapshot -> Deve corresponder ao componente com as pro
     testID="TEMP_INDICATOR_GRADIENT_TEST_ID"
   />
   <Text
-    rest={
-      Object {
-        "testID": "TEMP_INDICATOR_MAX_TEST_ID",
-      }
-    }
     style={
       Array [
         Object {
@@ -164,7 +144,7 @@ exports[`TempIndicator -> Snapshot -> Deve corresponder ao componente com as pro
         undefined,
       ]
     }
-    testID="LABEL_CONTAINER_TEST_ID"
+    testID="TEMP_INDICATOR_MAX_TEST_ID"
   >
     0
     °

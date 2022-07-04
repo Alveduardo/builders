@@ -1,6 +1,9 @@
+import { RefObject } from 'react';
 import { TextStyle, ViewStyle } from 'react-native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { WeatherContextState, WeatherData } from '../../contexts/Weather';
+
+import { IconButtonRef } from '../../components/IconButton/IconButton-types';
+import { WeatherContextState, WeatherData } from '../../contexts/Weather/Weather-types';
 import { AppRootStackParamList } from '../../utils/navigation/navigator-types';
 
 export interface DashboardStyles {
@@ -21,12 +24,12 @@ interface StateConfig extends Pick<WeatherContextState, 'img' | 'iconName'> {
 }
 
 interface MethodsConfig {
-  iconButtonRef: any;
+  iconButtonRef: RefObject<IconButtonRef>;
   updateWeather: () => void;
   handlePress: () => void;
 }
 
-type StylesConfig = DashboardStyles;
+interface StylesConfig extends DashboardStyles {}
 
 export interface DashboardConfig {
   state: StateConfig;

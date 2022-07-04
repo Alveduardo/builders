@@ -35,7 +35,7 @@ const IconButton = memo(
       const Icon = type;
 
       return (
-        <Container testID={ICON_BUTTON.TEST_ID.CONTAINER} {...{ rest, onPress, disabled, style: containerStyle }}>
+        <Container testID={ICON_BUTTON.TEST_ID.CONTAINER} {...rest} {...{ onPress, disabled, style: containerStyle }}>
           {loading ? (
             <ActivityIndicator testID={ICON_BUTTON.TEST_ID.ACTIVITY_INDICATOR} size={'small'} color={color as Color} />
           ) : (

@@ -6,7 +6,7 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
-    "test": "jest components --watch --coverage --verbose --onlyChanged",
+    "test": "jest --watch --coverage --verbose --onlyChanged",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {

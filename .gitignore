@@ -30,6 +30,9 @@ local.properties
 *.iml
 *.hprof
 
+# tests
+coverage/
+
 # node.js
 #
 node_modules/

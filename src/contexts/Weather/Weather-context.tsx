@@ -47,6 +47,7 @@ export const WeatherProvider = ({ children }: WeatherContextProps): JSX.Element 
   const requestPermissions = async () => {
     try {
       let response;
+
       if (GLOBAL.IS_IOS) response = await Geolocation.requestAuthorization('whenInUse');
       else if (GLOBAL.IS_ANDROID)
         response = await PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION);

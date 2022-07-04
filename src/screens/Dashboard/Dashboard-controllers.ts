@@ -11,6 +11,7 @@ import { useWeather } from '../../contexts/Weather';
 
 export const useDashboardConfig = ({ navigation }: DashboardProps): DashboardConfig => {
   const { top, bottom } = useSafeAreaInsets();
+
   const {
     state: { data, img, iconName },
     requestLocation,

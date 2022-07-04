@@ -5,6 +5,7 @@ import { ButtonProps } from './Button-types';
 import { useButtonConfig } from './Button-controllers';
 
 import Label from '../Label';
+import { BUTTON } from './Button-consts';
 
 const Button = ({
   label,
@@ -29,7 +30,17 @@ const Button = ({
   });
 
   return (
-    <TouchableHighlight {...{ rest, style: buttonStyle, onPress, onPressIn, onPressOut, underlayColor }}>
+    <TouchableHighlight
+      testID={BUTTON.TEST_ID.CONTAINER}
+      {...{
+        rest,
+        style: buttonStyle,
+        onPress,
+        onPressIn,
+        onPressOut,
+        underlayColor,
+      }}
+    >
       <Label color={textColor}>{label}</Label>
     </TouchableHighlight>
   );

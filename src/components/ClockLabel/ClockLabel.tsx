@@ -11,7 +11,11 @@ const ClockLabel = memo(({ size, color, style, ...rest }: ClockLabelProps) => {
     styles: { containerStyle },
   } = useClockLabelConfig({ style });
 
-  return <Label {...{ rest, size, color, style: containerStyle }}>{date}</Label>;
+  return (
+    <Label {...rest} {...{ size, color, style: containerStyle }}>
+      {date}
+    </Label>
+  );
 });
 
 export default ClockLabel;
