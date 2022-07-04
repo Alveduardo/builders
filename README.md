@@ -1,6 +1,6 @@
 # React Native OpenWeather
 
-An application that takes the user's current location and displays on the interface the current address, weather data for the region, current and forecast weather data, and a button to update this data.
+Um aplicativo que pega a localização atual do usuário e exibe na interface o endereço atual, dados meteorológicos da região, dados meteorológicos atuais e previstos e um botão para atualizar esses dados.
 
 ## Android
 
@@ -18,7 +18,7 @@ An application that takes the user's current location and displays on the interf
 
 ## Usage
 
-Clone repository, open a Terminal in your project's folder and run:
+Clone o repositório, abra um Terminal na pasta do seu projeto e execute:
 
 ```
 git clone https://github.com/Alveduardo/builders.git
@@ -32,7 +32,7 @@ cd builders
 yarn install
 ```
 
-If you're in a CocoaPods project (the default setup since React Native 0.60), make sure to install pods before you run your app:
+Se você estiver em um projeto CocoaPods (a configuração padrão desde o React Native 0.60), certifique-se de instalar os pods antes de executar seu aplicativo:
 
 ```
 cd ios && pod install && cd ..
