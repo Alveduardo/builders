@@ -32,10 +32,10 @@ cd builders
 yarn install
 ```
 
-If you're on a Mac and developing for iOS, you need to install the pods (via Cocoapods) to complete the linking.
+If you're in a CocoaPods project (the default setup since React Native 0.60), make sure to install pods before you run your app:
 
 ```
-npx pod-install ios
+cd ios && pod install && cd ..
 ```
 
 ### iOS
@@ -55,3 +55,11 @@ yarn android
 ```
 yarn test
 ```
+
+### Observações:
+
+- Testes em apenas alguns componentes. Apenas para demonstração de conhecimento, caso fosse fazer todos cenários de testes possíveis levariam muito tempo.
+
+- Documentações apenas nos hooks e superficialmente nas tipagens de props. Apenas para demonstração de conhecimento, caso fosse documentar tudo levaria muito tempo.
+
+- Implementação de algumas funcionalidades apenas para fins de demonstração de conhecimento.

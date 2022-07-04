@@ -14,7 +14,7 @@ exports[`Label -> Snapshot -> Deve corresponder ao componente com as props defau
   }
   testID="LABEL_CONTAINER_TEST_ID"
 >
-  txt example
+  children example
 </Text>
 `;
 
@@ -32,6 +32,6 @@ exports[`Label -> Snapshot -> Deve corresponder ao componente com as props mais 
   }
   testID="LABEL_CONTAINER_TEST_ID"
 >
-  txt example
+  children example
 </Text>
 `;

@@ -5,7 +5,7 @@ import { LabelSize } from '../Label-types';
 import { StyleSheet } from 'react-native';
 import { LABEL } from '../Label-consts';
 
-const CONTENT = 'txt example';
+const CONTENT = 'children example';
 
 const describeEachSize = [
   {
@@ -95,9 +95,7 @@ describe('Label ->', () => {
     });
     describe('children ->', () => {
       it('Deve renderizar o componente exibindo o children', () => {
-        const color = '#FF0000';
-
-        const { getByTestId } = render(<Label {...{ color }}>{CONTENT}</Label>);
+        const { getByTestId } = render(<Label>{CONTENT}</Label>);
 
         const componente = getByTestId(LABEL.TEST_ID.CONTAINER).props;
 

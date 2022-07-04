@@ -50,7 +50,7 @@ describe('Button ->', () => {
   });
 
   describe('Props ->', () => {
-    describe('disabled:', () => {
+    describe('disabled ->', () => {
       describe('false ->', () => {
         it('Deve chamar a função onPress quando a prop disabled for false', () => {
           const onPress = jest.fn();
@@ -77,7 +77,7 @@ describe('Button ->', () => {
         });
       });
     });
-    describe('size:', () => {
+    describe('size ->', () => {
       describe.each(describeEachSize)('Deve ter estilo correto para cada valor de size ->', ({ size, sizeHeight }) => {
         it(`${size}`, () => {
           const { getByTestId } = render(<Button label={label} size={size as ButtonSize} />);
@@ -86,7 +86,7 @@ describe('Button ->', () => {
         });
       });
     });
-    describe('kind:', () => {
+    describe('kind ->', () => {
       describe.each(describeEachKind)(
         'Deve ter estilo correto para cada valor de kind ->',
         ({ kind, kindBackgroundColor, kindTextColor, kindBorderColor, kindBorderWidth }) => {
@@ -104,7 +104,7 @@ describe('Button ->', () => {
         },
       );
     });
-    describe('width:', () => {
+    describe('width ->', () => {
       it('Deve sobrescrever o width default caso a prop for passada', () => {
         const width = 200;
         const { getByTestId } = render(<Button label={label} width={width} />);

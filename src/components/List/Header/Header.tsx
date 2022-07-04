@@ -1,7 +1,9 @@
 import React from 'react';
-import Label from '../../Label';
+
 import { HEADER } from './Header-consts';
 import { useHeaderConfig } from './Header-controllers';
+
+import Label from '../../Label';
 
 const Header = ({ title = '' }) => {
   const {
