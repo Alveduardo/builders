@@ -19,7 +19,7 @@ export const bottomSheetStyles: BottomSheetStyles = {
     titleStyle: {
       marginBottom: 8,
     },
-    captionStyle: {
+    descriptionStyle: {
       marginBottom: 24,
     },
     containerButtonStyle: {

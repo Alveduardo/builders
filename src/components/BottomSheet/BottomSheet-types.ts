@@ -3,7 +3,7 @@ import { TextStyle, ViewStyle } from 'react-native';
 export interface BottomSheetState {
   visible: boolean;
   title: string;
-  caption: string;
+  description: string;
   primaryButton: DefaultButton;
   secondaryButton: DefaultButton;
 }
@@ -22,7 +22,7 @@ interface DefaultStyles {
   containerStyle: ViewStyle;
   contentStyle: ViewStyle;
   titleStyle: TextStyle;
-  captionStyle: TextStyle;
+  descriptionStyle: TextStyle;
   containerButtonStyle: ViewStyle;
   primaryButtonWidthStyle: ViewStyle['width'];
   secondaryButtonWidthStyle: ViewStyle['width'];

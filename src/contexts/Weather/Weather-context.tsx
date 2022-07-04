@@ -31,7 +31,7 @@ export const WeatherProvider = ({ children }: WeatherContextProps): JSX.Element 
   const callBottomSheet = () => {
     BottomSheet.show({
       title: 'Alerta',
-      caption: 'Para continuar é necessário ter a permissão da localização do usuário.',
+      description: 'Para continuar é necessário ter a permissão da localização do usuário.',
       primaryButton: {
         label: 'Abrir configurações',
         onPress: Linking.openSettings,

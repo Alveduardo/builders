@@ -15,7 +15,7 @@ export const useBottomSheetConfig = (): BottomSheetConfig => {
       contentStyle,
       containerButtonStyle,
       titleStyle,
-      captionStyle,
+      descriptionStyle,
       primaryButtonWidthStyle,
       secondaryButtonWidthStyle,
     },
@@ -23,11 +23,11 @@ export const useBottomSheetConfig = (): BottomSheetConfig => {
 
   const [state, setState] = useState<BottomSheetState>(BOTTOM_SHEET.INITIAL_STATE);
 
-  BottomSheet.show = ({ title, caption, primaryButton, secondaryButton }) => {
+  BottomSheet.show = ({ title, description, primaryButton, secondaryButton }) => {
     setState({
       visible: true,
       title,
-      caption,
+      description,
       primaryButton,
       secondaryButton,
     });
@@ -60,7 +60,7 @@ export const useBottomSheetConfig = (): BottomSheetConfig => {
       containerStyle,
       contentStyle,
       titleStyle,
-      captionStyle,
+      descriptionStyle,
       containerButtonStyle: { ...containerButtonStyle, paddingBottom: 16 + bottom },
       primaryButtonWidthStyle,
       secondaryButtonWidthStyle,

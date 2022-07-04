@@ -14,14 +14,14 @@ import { COLORS } from '../../utils/colors/colors-consts';
 //@ts-ignore
 const BottomSheet: BottomSheetComponent = (): JSX.Element => {
   const {
-    state: { visible, title, caption, primaryButton, secondaryButton },
+    state: { visible, title, description, primaryButton, secondaryButton },
     methods: { primaryOnPress, secondaryOnPress },
     styles: {
       containerStyle,
       contentStyle,
       containerButtonStyle,
       titleStyle,
-      captionStyle,
+      descriptionStyle,
       primaryButtonWidthStyle,
       secondaryButtonWidthStyle,
     },
@@ -46,8 +46,8 @@ const BottomSheet: BottomSheetComponent = (): JSX.Element => {
             {title}
           </Label>
 
-          <Label style={captionStyle} color={COLORS.SECONDARY}>
-            {caption}
+          <Label style={descriptionStyle} color={COLORS.SECONDARY}>
+            {description}
           </Label>
 
           <View style={containerButtonStyle}>
