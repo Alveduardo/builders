@@ -10,4 +10,7 @@ export const BOTTOM_SHEET = {
       label: '',
     },
   },
+  TEST_ID: {
+    CONTAINER: 'BOTTOM_SHEET_CONTAINER_TEST_ID',
+  },
 };

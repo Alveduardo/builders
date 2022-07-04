@@ -2,21 +2,12 @@
 
 exports[`IconButton -> Snapshot -> Deve corresponder ao componente com as props default 1`] = `
 <View
-  accessible={true}
-  collapsable={false}
-  focusable={false}
-  onClick={[Function]}
-  onResponderGrant={[Function]}
-  onResponderMove={[Function]}
-  onResponderRelease={[Function]}
-  onResponderTerminate={[Function]}
-  onResponderTerminationRequest={[Function]}
-  onStartShouldSetResponder={[Function]}
+  disabled={true}
+  rest={Object {}}
   style={
     Object {
       "alignItems": "center",
       "justifyContent": "center",
-      "opacity": 1,
     }
   }
   testID="ICON_BUTTON_CONTAINER_TEST_ID"
@@ -48,21 +39,12 @@ exports[`IconButton -> Snapshot -> Deve corresponder ao componente com as props 
 
 exports[`IconButton -> Snapshot -> Deve corresponder ao componente com as props mais utilizadas 1`] = `
 <View
-  accessible={true}
-  collapsable={false}
-  focusable={false}
-  onClick={[Function]}
-  onResponderGrant={[Function]}
-  onResponderMove={[Function]}
-  onResponderRelease={[Function]}
-  onResponderTerminate={[Function]}
-  onResponderTerminationRequest={[Function]}
-  onStartShouldSetResponder={[Function]}
+  disabled={true}
+  rest={Object {}}
   style={
     Object {
       "alignItems": "center",
       "justifyContent": "center",
-      "opacity": 1,
     }
   }
   testID="ICON_BUTTON_CONTAINER_TEST_ID"

@@ -9,6 +9,7 @@ import { useBottomSheetConfig } from './BottomSheet-controllers';
 
 import { COLORS } from '../../utils/colors/colors-consts';
 import { BottomSheetComponent } from './BottomSheet-types';
+import { BOTTOM_SHEET } from './BottomSheet-consts';
 
 //@ts-ignore
 const BottomSheet: BottomSheetComponent = (): JSX.Element => {
@@ -35,7 +36,12 @@ const BottomSheet: BottomSheetComponent = (): JSX.Element => {
       presentationStyle={'overFullScreen'}
     >
       <View style={containerStyle}>
-        <Animated.View entering={FadeInDown} exiting={SlideOutDown} style={contentStyle}>
+        <Animated.View
+          testID={BOTTOM_SHEET.TEST_ID.CONTAINER}
+          entering={FadeInDown}
+          exiting={SlideOutDown}
+          style={contentStyle}
+        >
           <Label size='large' style={titleStyle} color={COLORS.PRIMARY}>
             {title}
           </Label>

@@ -42,7 +42,13 @@ export interface IconButtonConfig {
 }
 
 export interface IconButtonProps extends Omit<IconProps, 'size' | 'style'>, TouchableOpacityProps {
+  /**
+   * type of Icon
+   */
   type: typeof Icon;
+
+  /**
+   * Possible IconButton size values.
+   */
   size?: IconButtonSize;
-  loading?: boolean;
 }

@@ -53,6 +53,13 @@ export interface WeatherContextState {
 }
 
 export interface WeatherContextData {
+  /**
+   * The WeatherContext state.
+   */
   state: WeatherContextState;
+
+  /**
+   * The function that is invoked when the location is request.
+   */
   requestLocation: () => void;
 }

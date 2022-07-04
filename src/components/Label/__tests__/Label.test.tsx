@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react-native';
 import Label from '../Label';
-import { Size as LabelSize } from '../Label-types';
+import { LabelSize } from '../Label-types';
 import { StyleSheet } from 'react-native';
 import { LABEL } from '../Label-consts';
 

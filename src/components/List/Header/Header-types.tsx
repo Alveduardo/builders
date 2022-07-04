@@ -15,5 +15,8 @@ export interface HeaderConfig {
 }
 
 export interface HeaderProps {
+  /**
+   * The Header title.
+   */
   title: string;
 }

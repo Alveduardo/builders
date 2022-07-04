@@ -20,8 +20,6 @@ const itemPropsDefault = {
   index: 0,
 };
 
-jest.mock('react-native-linear-gradient', () => 'LinearGradient');
-
 describe('Item ->', () => {
   beforeEach(() => {
     jest.spyOn(console, 'error').mockImplementation(jest.fn());

@@ -2,11 +2,19 @@
 
 exports[`Header -> Snapshot -> Deve corresponder ao componente com as props default 1`] = `
 <Text
+  rest={
+    Object {
+      "testID": "HEADER_LABEL_TEST_ID",
+    }
+  }
   style={
     Array [
       Object {
         "color": "#FFF",
         "fontSize": 18,
+        "marginBottom": 16,
+        "opacity": 0.8,
+        "textAlign": "center",
       },
       Object {
         "marginBottom": 16,
@@ -15,7 +23,7 @@ exports[`Header -> Snapshot -> Deve corresponder ao componente com as props defa
       },
     ]
   }
-  testID="HEADER_LABEL_TEST_ID"
+  testID="LABEL_CONTAINER_TEST_ID"
 >
   title
 </Text>
@@ -23,11 +31,19 @@ exports[`Header -> Snapshot -> Deve corresponder ao componente com as props defa
 
 exports[`Header -> Snapshot -> Deve corresponder ao componente com as props mais utilizadas 1`] = `
 <Text
+  rest={
+    Object {
+      "testID": "HEADER_LABEL_TEST_ID",
+    }
+  }
   style={
     Array [
       Object {
         "color": "#FFF",
         "fontSize": 18,
+        "marginBottom": 16,
+        "opacity": 0.8,
+        "textAlign": "center",
       },
       Object {
         "marginBottom": 16,
@@ -36,7 +52,7 @@ exports[`Header -> Snapshot -> Deve corresponder ao componente com as props mais
       },
     ]
   }
-  testID="HEADER_LABEL_TEST_ID"
+  testID="LABEL_CONTAINER_TEST_ID"
 >
   title
 </Text>

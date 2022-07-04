@@ -2,15 +2,24 @@
 
 exports[`TempIndicator -> Snapshot -> Deve corresponder ao componente com as props default 1`] = `
 <View
+  rest={Object {}}
   style={
-    Object {
-      "alignItems": "center",
-      "flexDirection": "row",
-    }
+    Array [
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+      },
+      undefined,
+    ]
   }
   testID="TEMP_INDICATOR_CONTAINER_TEST_ID"
 >
   <Text
+    rest={
+      Object {
+        "testID": "TEMP_INDICATOR_MIN_TEST_ID",
+      }
+    }
     style={
       Array [
         Object {
@@ -20,7 +29,7 @@ exports[`TempIndicator -> Snapshot -> Deve corresponder ao componente com as pro
         undefined,
       ]
     }
-    testID="TEMP_INDICATOR_MIN_TEST_ID"
+    testID="LABEL_CONTAINER_TEST_ID"
   >
     0
     °
@@ -55,6 +64,11 @@ exports[`TempIndicator -> Snapshot -> Deve corresponder ao componente com as pro
     testID="TEMP_INDICATOR_GRADIENT_TEST_ID"
   />
   <Text
+    rest={
+      Object {
+        "testID": "TEMP_INDICATOR_MAX_TEST_ID",
+      }
+    }
     style={
       Array [
         Object {
@@ -64,7 +78,7 @@ exports[`TempIndicator -> Snapshot -> Deve corresponder ao componente com as pro
         undefined,
       ]
     }
-    testID="TEMP_INDICATOR_MAX_TEST_ID"
+    testID="LABEL_CONTAINER_TEST_ID"
   >
     0
     °
@@ -74,15 +88,24 @@ exports[`TempIndicator -> Snapshot -> Deve corresponder ao componente com as pro
 
 exports[`TempIndicator -> Snapshot -> Deve corresponder ao componente com as props mais utilizadas 1`] = `
 <View
+  rest={Object {}}
   style={
-    Object {
-      "alignItems": "center",
-      "flexDirection": "row",
-    }
+    Array [
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+      },
+      undefined,
+    ]
   }
   testID="TEMP_INDICATOR_CONTAINER_TEST_ID"
 >
   <Text
+    rest={
+      Object {
+        "testID": "TEMP_INDICATOR_MIN_TEST_ID",
+      }
+    }
     style={
       Array [
         Object {
@@ -92,7 +115,7 @@ exports[`TempIndicator -> Snapshot -> Deve corresponder ao componente com as pro
         undefined,
       ]
     }
-    testID="TEMP_INDICATOR_MIN_TEST_ID"
+    testID="LABEL_CONTAINER_TEST_ID"
   >
     0
     °
@@ -127,6 +150,11 @@ exports[`TempIndicator -> Snapshot -> Deve corresponder ao componente com as pro
     testID="TEMP_INDICATOR_GRADIENT_TEST_ID"
   />
   <Text
+    rest={
+      Object {
+        "testID": "TEMP_INDICATOR_MAX_TEST_ID",
+      }
+    }
     style={
       Array [
         Object {
@@ -136,7 +164,7 @@ exports[`TempIndicator -> Snapshot -> Deve corresponder ao componente com as pro
         undefined,
       ]
     }
-    testID="TEMP_INDICATOR_MAX_TEST_ID"
+    testID="LABEL_CONTAINER_TEST_ID"
   >
     0
     °

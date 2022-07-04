@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button -> Snapshot -> Deve corresponder ao componente com as props default 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#036f93",
+      "borderRadius": 999,
+      "height": 50,
+      "justifyContent": "center",
+      "width": "100%",
+    }
+  }
+>
+  <Text
+    rest={Object {}}
+    style={
+      Array [
+        Object {
+          "color": "#FFF",
+          "fontSize": 16,
+        },
+        undefined,
+      ]
+    }
+    testID="LABEL_CONTAINER_TEST_ID"
+  >
+    test
+  </Text>
+</View>
+`;
+
+exports[`Button -> Snapshot -> Deve corresponder ao componente com as props mais utilizadas 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#036f93",
+      "borderRadius": 999,
+      "height": 50,
+      "justifyContent": "center",
+      "width": "100%",
+    }
+  }
+>
+  <Text
+    rest={Object {}}
+    style={
+      Array [
+        Object {
+          "color": "#FFF",
+          "fontSize": 16,
+        },
+        undefined,
+      ]
+    }
+    testID="LABEL_CONTAINER_TEST_ID"
+  >
+    test
+  </Text>
+</View>
+`;

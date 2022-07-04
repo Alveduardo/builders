@@ -1,5 +1,23 @@
 import { TextStyle, ViewStyle } from 'react-native';
 
+interface DefaultButton {
+  label: string;
+  onPress?: () => void;
+  onRequestClose?: boolean;
+}
+
+export interface BottomSheetStyles {
+  defaultStyles: DefaultStyles;
+}
+
+export interface BottomSheetState {
+  visible: boolean;
+  title: string;
+  caption: string;
+  primaryButton: DefaultButton;
+  secondaryButton: DefaultButton;
+}
+
 interface DefaultStyles {
   containerStyle: ViewStyle;
   contentStyle: ViewStyle;
@@ -17,20 +35,6 @@ interface MethodsConfig {
   secondaryOnPress: () => void;
 }
 
-interface DefaultButton {
-  label: string;
-  onPress?: () => void;
-  onRequestClose?: boolean;
-}
-
-export interface BottomSheetState {
-  visible: boolean;
-  title: string;
-  caption: string;
-  primaryButton: DefaultButton;
-  secondaryButton: DefaultButton;
-}
-
 interface StylesConfig extends DefaultStyles {}
 
 export interface BottomSheetConfig {
@@ -40,10 +44,13 @@ export interface BottomSheetConfig {
 }
 
 export interface BottomSheetComponent extends React.FC {
+  /**
+   * When the method is called, show BottomSheet.
+   */
   show: ({}: Omit<BottomSheetState, 'visible'>) => void;
-  hide: () => void;
-}
 
-export interface BottomSheetStyles {
-  defaultStyles: DefaultStyles;
+  /**
+   * When the method is called, hide BottomSheet.
+   */
+  hide: () => void;
 }

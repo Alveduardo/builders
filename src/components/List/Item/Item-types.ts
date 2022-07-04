@@ -39,6 +39,13 @@ export interface ItemT {
 }
 
 export interface ItemProps {
+  /**
+   * The list item.
+   */
   item: ItemT;
+
+  /**
+   * The list index.
+   */
   index: number;
 }

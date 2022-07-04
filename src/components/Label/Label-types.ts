@@ -34,6 +34,13 @@ export interface LabelConfig {
 }
 
 export interface LabelProps extends TextProps {
+  /**
+   * Label color values.
+   */
   color?: Color;
+
+  /**
+   * Label size values.
+   */
   size?: LabelSize;
 }
