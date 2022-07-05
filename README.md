@@ -1,6 +1,6 @@
 # React Native OpenWeather
 
-Um aplicativo que pega a localização atual do usuário e exibe na interface o endereço atual, dados meteorológicos da região, dados meteorológicos atuais e previstos e um botão para atualizar esses dados.
+Um aplicativo que pega a localização atual do usuário e exibe na interface o endereço atual, dados meteorológicos da região, atuais e previstos, com um botão para atualizar esses dados.
 
 ## Android
 
@@ -31,6 +31,12 @@ cd builders
 ```
 yarn install
 ```
+
+### Configurar variáveis de ambiente
+
+- Gerar uma chave de API em https://home.openweathermap.org/api_keys.
+- Utilizar o arquivo `.env.example` como modelo, troque o nome do arquivo para `.env`.
+- Dentro do arquivo `.env`, substituir `OPEN_WEATHER_API_KEY` pela chave de API.
 
 Se você estiver em um projeto CocoaPods (a configuração padrão desde o React Native 0.60), certifique-se de instalar os pods antes de executar seu aplicativo:
 
